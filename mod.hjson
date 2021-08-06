@@ -1,0 +1,8 @@
+name: "mod-java-mod"
+displayName: "Simple Java Mod"
+author: "nekit508"
+main: "mod.ExtJavaMod"
+description: "Made in Russia."
+version: 0.0.0
+minGameVersion: 105
+

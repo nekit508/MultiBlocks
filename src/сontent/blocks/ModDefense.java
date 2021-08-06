@@ -1,0 +1,56 @@
+package сontent.blocks;
+
+import mindustry.content.Items;
+import mindustry.ctype.ContentList;
+import mindustry.type.Category;
+import mindustry.type.ItemStack;
+import mindustry.world.blocks.defense.ForceProjector;
+import mindustry.world.blocks.defense.Wall;
+
+import static сontent.blocks.ModBlocks.*;
+
+import modClasses.CircleForceProjector;
+
+public class ModDefense implements ContentList {
+    @Override
+    public void load() {
+        leadWall = new Wall("lead-wall"){{
+            lightningChance = -1f;
+            chanceDeflect = -1f;
+            health = 400;
+            size = 1;
+            requirements(Category.defense, ItemStack.with(Items.lead, 8));
+        }};
+        largeLeadWall = new Wall("large-lead-wall"){{
+            lightningChance = -1f;
+            chanceDeflect = -1f;
+            health = 1600;
+            size = 2;
+            requirements(Category.defense, ItemStack.with(Items.lead, 32));
+        }};
+        forceWall = new ForceProjector("force-wall"){{
+            health = 750;
+            shieldHealth = 2500;
+            radius = 12f;
+            phaseRadiusBoost = 1f;
+            phaseShieldBoost = 1;
+            size = 2;
+            hasItems = false;
+            requirements(Category.defense, ItemStack.with(Items.titanium, 40, Items.silicon, 20, Items.graphite, 30));
+            consumes.power(1);
+            consumes.item(Items.phaseFabric).boost();
+        }};
+        magneticShield = new CircleForceProjector("magnetic-shield"){{
+            health = 750;
+            shieldHealth = 2500;
+            radius = 120f;
+            phaseRadiusBoost = 1f;
+            phaseShieldBoost = 1;
+            size = 2;
+            hasItems = false;
+            requirements(Category.defense, ItemStack.with(Items.titanium, 40, Items.silicon, 20, Items.graphite, 30));
+            consumes.power(1);
+            consumes.item(Items.phaseFabric).boost();
+        }};
+    }
+}
