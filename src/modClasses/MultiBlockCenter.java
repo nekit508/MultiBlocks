@@ -6,6 +6,7 @@ import arc.util.Log;
 import arc.util.Strings;
 import mindustry.Vars;
 import mindustry.gen.Building;
+import mindustry.type.Item;
 import mindustry.ui.Bar;
 import mindustry.world.blocks.production.Drill;
 import mindustry.world.blocks.production.GenericCrafter;
@@ -21,7 +22,7 @@ public class MultiBlockCenter extends GenericCrafter {
         super(name);
         solid = true;
         update = true;
-        itemCapacity = 1000;
+        itemCapacity = 10;
         hasItems = true;
     }
 
@@ -31,7 +32,7 @@ public class MultiBlockCenter extends GenericCrafter {
         @Override
         public void draw() {
             super.draw();
-            Draw.alpha(50f);
+            Draw.alpha(0.3f);
             for(int i = 0; i < construction.data.size(); i++) {
                 for(int z = 0; z < construction.data.get(i).size(); z++) {
                     if(content.block(construction.data.get(i).get(z)) != null) {
@@ -72,12 +73,15 @@ public class MultiBlockCenter extends GenericCrafter {
                     Building build = world.buildWorld(x + i*tilesize + construction.offSet*tilesize, y + z*tilesize + construction.offSet*tilesize);
                     if(build != null) {
                         if (build.block().name.equals("mod-java-mod-multi-block-inner")) {
-                            if (build.block().hasItems && build.block() != block() && build.items.total() != 0) {
-                                items.add(build.items.take(), 1);
+                            Item itm = build.items.take();
+                            if (build.block().hasItems && build.block() != block() && build.items.total() != 0 && items.get(itm) != itemCapacity) {
+                                items.add(itm, 1);
+                            }else if(itm != null){
+                                build.items.add(itm,1);
                             }
                         } else if (build.block().name.equals("mod-java-mod-multi-block-outer")) {
                             if (build.block() != block()) {
-                                if (items.has(outputItem.item)){
+                                if (items.has(outputItem.item) && build.items.total() != build.block().itemCapacity){
                                     build.items.add(outputItem.item,1);
                                     items.remove(outputItem.item, 1);
                                 }
