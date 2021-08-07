@@ -6,7 +6,7 @@ import modClasses.Construction;
 import java.util.ArrayList;
 
 public class Constructions {
-    public static Construction siliconFactory,graphiteFactory;
+    public static Construction siliconFactory,graphiteFactory,metaglassFactory;
 
     public static void parse(String str,Construction cons,ArrayList<ArrayList<String>> list){
         int z = 0;
@@ -45,6 +45,18 @@ public class Constructions {
                     "fbobf\n";
             graphiteFactory.offSet = -2;
             parse(gf,graphiteFactory, ConstructionDicts.standartCode);
+        }
+        {
+            metaglassFactory = new Construction();
+            String mgf = "fffcfff\n" +
+                    "ffbbbff\n" +
+                    "ibfffbf\n" +
+                    "cbfffbo\n" +
+                    "ibfffbf\n" +
+                    "ffbbbff\n" +
+                    "fffсfff";
+            metaglassFactory.offSet = -3;
+            parse(mgf,metaglassFactory, ConstructionDicts.standartCode);
         }
     }
 }

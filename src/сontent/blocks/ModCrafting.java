@@ -34,13 +34,22 @@ public class ModCrafting implements ContentList {
             requirements(Category.crafting, ItemStack.with(Items.lead, 32));
         }};
         multiGraphite = new MultiBlockCenter("multi-block-graphite"){{
-            construction = Constructions.siliconFactory;
+            construction = Constructions.graphiteFactory;
             size = 1;
             health = 100;
             requirements(Category.crafting, ItemStack.with(Items.lead, 32));
             consumes.power(2);
-            consumes.items(ItemStack.with(Items.coal, 1, Items.sand, 2));
-            outputItem = new ItemStack(Items.silicon, 2);
+            consumes.items(ItemStack.with(Items.coal, 2));
+            outputItem = new ItemStack(Items.graphite, 1);
+        }};
+        multiMetaglass = new MultiBlockCenter("multi-block-metaglass"){{
+            construction = Constructions.metaglassFactory;
+            size = 1;
+            health = 100;
+            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+            consumes.power(2);
+            consumes.items(ItemStack.with(Items.sand, 1, Items.lead, 1));
+            outputItem = new ItemStack(Items.metaglass, 1);
         }};
     }
 }
