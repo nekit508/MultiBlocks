@@ -1,12 +1,12 @@
 package сontent.blocks;
 
 import mindustry.content.Items;
+import mindustry.content.Liquids;
 import mindustry.ctype.ContentList;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
-import modClasses.MultiBlockCenter;
-import modClasses.MultiBlockInner;
-import modClasses.MultiBlockOuter;
+import mindustry.type.LiquidStack;
+import modClasses.*;
 import modVars.Constructions;
 
 import static сontent.blocks.ModBlocks.*;
@@ -18,6 +18,8 @@ public class ModCrafting implements ContentList {
             construction = Constructions.siliconFactory;
             size = 1;
             health = 100;
+            hasLiquids = true;
+            hasItems = true;
             requirements(Category.crafting, ItemStack.with(Items.lead, 32));
             consumes.power(2);
             consumes.items(ItemStack.with(Items.coal, 1, Items.sand, 2));
@@ -29,6 +31,16 @@ public class ModCrafting implements ContentList {
             requirements(Category.crafting, ItemStack.with(Items.lead, 32));
         }};
         outer = new MultiBlockOuter("multi-block-outer"){{
+            size = 1;
+            health = 100;
+            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+        }};
+        liquidInner = new MultiBlockLiquidInner("multi-block-liquid-inner"){{
+            size = 1;
+            health = 100;
+            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+        }};
+        liquidOuter = new MultiBlockLiquidOuter("multi-block-liquid-outer"){{
             size = 1;
             health = 100;
             requirements(Category.crafting, ItemStack.with(Items.lead, 32));
@@ -50,6 +62,17 @@ public class ModCrafting implements ContentList {
             consumes.power(2);
             consumes.items(ItemStack.with(Items.sand, 1, Items.lead, 1));
             outputItem = new ItemStack(Items.metaglass, 1);
+        }};
+        multiLiquid = new MultiBlockCenter("multi-block-liquid"){{
+            construction = Constructions.liquidFactory;
+            size = 1;
+            health = 100;
+            hasLiquids = true;
+            hasItems = false;
+            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+            consumes.power(2);
+            consumes.liquid(Liquids.oil, 1);
+            outputLiquid = new LiquidStack(Liquids.cryofluid, 1);
         }};
     }
 }

@@ -7,28 +7,35 @@ import arc.util.Strings;
 import mindustry.Vars;
 import mindustry.gen.Building;
 import mindustry.type.Item;
+import mindustry.type.ItemStack;
 import mindustry.ui.Bar;
-import mindustry.world.blocks.production.Drill;
-import mindustry.world.blocks.production.GenericCrafter;
-import сontent.blocks.ModBlocks;
+import mindustry.world.blocks.power.BurnerGenerator;
+import mindustry.world.blocks.power.PowerGenerator;
+import mindustry.world.meta.Stat;
+import mindustry.world.meta.StatUnit;
 
 import static mindustry.Vars.*;
 
-public class MultiBlockPowerCenter extends GenericCrafter {
+public class MultiBlockPowerCenter extends BurnerGenerator {
     public int tickCounter = 0;
     public boolean structureEnded = false;
     public Construction construction;
     public MultiBlockPowerCenter(String name) {
         super(name);
-        solid = true;
         update = true;
         itemCapacity = 10;
-        hasItems = true;
     }
 
-    public class MultiBuildingPowerCenter extends GenericCrafterBuild {
-        float ending = 0;
+    @Override
+    public void setStats(){
+        super.setStats();
 
+        if(hasItems){
+            stats.add(Stat.productionTime, itemDuration / 60f, StatUnit.seconds);
+        }
+    }
+
+    public class MultiBuildingPowerCenter extends BurnerGeneratorBuild {
         @Override
         public void draw() {
             super.draw();
@@ -52,11 +59,12 @@ public class MultiBlockPowerCenter extends GenericCrafter {
             if(structureEnded){
                 lootItems();
                 super.update();
+            }else{
+                productionEfficiency = 0f;
             }
         }
 
         public boolean checkTiles(){
-            ending = 0;
             for(int i = 0; i < construction.data.size(); i++){
                 for(int z = 0; z < construction.data.get(i).size(); z++){
                     if(!world.tileWorld(x + i*tilesize + construction.offSet*tilesize, y + z*tilesize + construction.offSet*tilesize).block().name.equals(construction.data.get(i).get(z)) && !construction.data.get(i).get(z).equals("off")){
@@ -78,13 +86,6 @@ public class MultiBlockPowerCenter extends GenericCrafter {
                                 items.add(itm, 1);
                             }else if(itm != null){
                                 build.items.add(itm,1);
-                            }
-                        } else if (build.block().name.equals("mod-java-mod-multi-block-outer")) {
-                            if (build.block() != block()) {
-                                if (items.has(outputItem.item) && build.items.total() != build.block().itemCapacity){
-                                    build.items.add(outputItem.item,1);
-                                    items.remove(outputItem.item, 1);
-                                }
                             }
                         }
                     }

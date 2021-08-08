@@ -9,7 +9,7 @@ public class ModBlocks implements ContentList {
             leadWall,largeLeadWall,forceWall,magneticShield,
             // production
             // multi blocks
-            multiSilicon,inner,outer,multiGraphite,multiMetaglass;
+            multiSilicon,inner,outer,liquidOuter,liquidInner,multiGraphite,multiMetaglass,multiPowerGenerator,multiLiquid;
 
     @Override
     public void load() {
@@ -21,5 +21,6 @@ public class ModBlocks implements ContentList {
     private ContentList[] blocksContent = {
             new ModDefense(),
             new ModCrafting(),
+            new ModPower()
     };
 }
