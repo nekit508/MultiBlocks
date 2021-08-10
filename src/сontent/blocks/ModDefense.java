@@ -14,7 +14,7 @@ import modClasses.CircleForceProjector;
 public class ModDefense implements ContentList {
     @Override
     public void load() {
-        leadWall = new Wall("lead-wall"){{
+		leadWall = new Wall("lead-wall"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 400;
@@ -28,33 +28,33 @@ public class ModDefense implements ContentList {
             size = 2;
             requirements(Category.defense, ItemStack.with(Items.lead, 32));
         }};
-		leadWall = new Wall("metaglass-wall"){{
+		metaglassWall = new Wall("metaglass-wall"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 20;
             size = 1;
-            requirements(Category.defense, ItemStack.with(Items.lead, 8));
+            requirements(Category.defense, ItemStack.with(Items.metaglass, 8));
         }};
-        largeLeadWall = new Wall("metaglass-wall-large"){{
+        largeMetaglassWall = new Wall("metaglass-wall-large"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 80;
             size = 2;
-            requirements(Category.defense, ItemStack.with(Items.lead, 32));
+            requirements(Category.defense, ItemStack.with(Items.metaglass, 32));
         }}
-		leadWall = new Wall("silicon-wall"){{
+		siliconWall = new Wall("silicon-wall"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 40;
             size = 1;
-            requirements(Category.defense, ItemStack.with(Items.lead, 8));
+            requirements(Category.defense, ItemStack.with(Items.silicon, 8));
         }};
-        largeLeadWall = new Wall("silicon-wall-large"){{
+        largeSiliconWall = new Wall("silicon-wall-large"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 160;
             size = 2;
-            requirements(Category.defense, ItemStack.with(Items.lead, 32));
+            requirements(Category.defense, ItemStack.with(Items.silicon, 32));
         }}
         forceWall = new ForceProjector("force-wall"){{
             health = 750;
