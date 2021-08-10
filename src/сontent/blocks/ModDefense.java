@@ -41,7 +41,7 @@ public class ModDefense implements ContentList {
             health = 80;
             size = 2;
             requirements(Category.defense, ItemStack.with(Items.metaglass, 32));
-        }}
+        }};
         siliconWall = new Wall("silicon-wall"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
@@ -55,7 +55,7 @@ public class ModDefense implements ContentList {
             health = 160;
             size = 2;
             requirements(Category.defense, ItemStack.with(Items.silicon, 32));
-        }}
+        }};
         forceWall = new ForceProjector("force-wall"){{
             health = 750;
             shieldHealth = 2500;
