@@ -20,8 +20,8 @@ public class ModDefense implements ContentList {
             health = 400;
             size = 1;
             requirements(Category.defense, ItemStack.with(Items.lead, 8));
-        }};
-        largeLeadWall = new Wall("lead-wall-large"){{
+		}};
+		largeLeadWall = new Wall("lead-wall-large"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 1600;
