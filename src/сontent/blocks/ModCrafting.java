@@ -21,6 +21,7 @@ public class ModCrafting implements ContentList {
             hasLiquids = true;
             hasItems = true;
             requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+            consItems = ItemStack.with(Items.coal, 1, Items.sand, 2);
             consumes.power(2);
             consumes.items(ItemStack.with(Items.coal, 1, Items.sand, 2));
             outputItem = new ItemStack(Items.silicon, 2);
@@ -52,6 +53,7 @@ public class ModCrafting implements ContentList {
             requirements(Category.crafting, ItemStack.with(Items.lead, 32));
             consumes.power(2);
             consumes.items(ItemStack.with(Items.coal, 2));
+            consItems = ItemStack.with(Items.coal, 2);
             outputItem = new ItemStack(Items.graphite, 1);
         }};
         multiMetaglass = new MultiBlockCenter("multi-block-metaglass"){{
@@ -60,6 +62,7 @@ public class ModCrafting implements ContentList {
             health = 100;
             requirements(Category.crafting, ItemStack.with(Items.lead, 32));
             consumes.power(2);
+            consItems = ItemStack.with(Items.lead, 1, Items.sand, 1);
             consumes.items(ItemStack.with(Items.sand, 1, Items.lead, 1));
             outputItem = new ItemStack(Items.metaglass, 1);
         }};
@@ -70,6 +73,7 @@ public class ModCrafting implements ContentList {
             hasLiquids = true;
             hasItems = false;
             requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+            consLiquid = new LiquidStack[]{new LiquidStack(Liquids.oil, 1)};
             consumes.power(2);
             consumes.liquid(Liquids.oil, 1);
             outputLiquid = new LiquidStack(Liquids.cryofluid, 1);
