@@ -21,13 +21,41 @@ public class ModDefense implements ContentList {
             size = 1;
             requirements(Category.defense, ItemStack.with(Items.lead, 8));
         }};
-        largeLeadWall = new Wall("large-lead-wall"){{
+        largeLeadWall = new Wall("lead-wall-large"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 1600;
             size = 2;
             requirements(Category.defense, ItemStack.with(Items.lead, 32));
         }};
+		leadWall = new Wall("metaglass-wall"){{
+            lightningChance = -1f;
+            chanceDeflect = -1f;
+            health = 20;
+            size = 1;
+            requirements(Category.defense, ItemStack.with(Items.lead, 8));
+        }};
+        largeLeadWall = new Wall("metaglass-wall-large"){{
+            lightningChance = -1f;
+            chanceDeflect = -1f;
+            health = 80;
+            size = 2;
+            requirements(Category.defense, ItemStack.with(Items.lead, 32));
+        }}
+		leadWall = new Wall("silicon-wall"){{
+            lightningChance = -1f;
+            chanceDeflect = -1f;
+            health = 40;
+            size = 1;
+            requirements(Category.defense, ItemStack.with(Items.lead, 8));
+        }};
+        largeLeadWall = new Wall("silicon-wall-large"){{
+            lightningChance = -1f;
+            chanceDeflect = -1f;
+            health = 160;
+            size = 2;
+            requirements(Category.defense, ItemStack.with(Items.lead, 32));
+        }}
         forceWall = new ForceProjector("force-wall"){{
             health = 750;
             shieldHealth = 2500;
