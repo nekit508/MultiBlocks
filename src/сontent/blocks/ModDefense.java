@@ -35,7 +35,7 @@ public class ModDefense implements ContentList {
             size = 1;
             requirements(Category.defense, ItemStack.with(Items.metaglass, 8));
         }};
-        largeMetaglassWall = new Wall("metaglass-wall-large"){{
+		largeMetaglassWall = new Wall("metaglass-wall-large"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 80;
@@ -49,7 +49,7 @@ public class ModDefense implements ContentList {
             size = 1;
             requirements(Category.defense, ItemStack.with(Items.silicon, 8));
         }};
-        largeSiliconWall = new Wall("silicon-wall-large"){{
+		largeSiliconWall = new Wall("silicon-wall-large"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 160;
