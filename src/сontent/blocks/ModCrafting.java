@@ -39,12 +39,12 @@ public class ModCrafting implements ContentList {
         liquidInner = new MultiBlockLiquidInner("multi-block-liquid-inner"){{
             size = 1;
             health = 100;
-            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+            requirements(Category.crafting, ItemStack.with(Items.titanium, 32));
         }};
         liquidOuter = new MultiBlockLiquidOuter("multi-block-liquid-outer"){{
             size = 1;
             health = 100;
-            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+            requirements(Category.crafting, ItemStack.with(Items.titanium, 32));
         }};
         multiGraphite = new MultiBlockCenter("multi-block-graphite"){{
             construction = Constructions.graphiteFactory;
