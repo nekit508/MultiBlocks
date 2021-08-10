@@ -6,7 +6,7 @@ import mindustry.world.Block;
 public class ModBlocks implements ContentList {
     public static Block
             // defense
-            leadWall,largeLeadWall,forceWall,magneticShield,
+            leadWall,largeLeadWall,metaglassWall,largeMetaglassWall,siliconWall,largeSiliconWall,forceWall,magneticShield,
             // production
             // multi blocks
             multiSilicon,inner,outer,liquidOuter,liquidInner,multiGraphite,multiMetaglass,multiPowerGenerator,multiLiquid;
