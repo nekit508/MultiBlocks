@@ -17,8 +17,8 @@ public class ConstructionDicts {
         ArrayList<String> l7 = new ArrayList<>();l7.add("h");l7.add("mod-java-mod-multi-block-liquid-outer");
         ArrayList<String> l8 = new ArrayList<>();l8.add("t");l8.add("titanium-wall");
         ArrayList<String> l9 = new ArrayList<>();l9.add("p");l9.add("pulse-conduit");
-        ArrayList<String> l8 = new ArrayList<>();l20.add("w");l10.add("thorium-wall");
-        ArrayList<String> l1 = new ArrayList<>();l21.add("n");l11.add("power-node");
+        ArrayList<String> l10 = new ArrayList<>();l10.add("w");l10.add("thorium-wall");
+        ArrayList<String> l11 = new ArrayList<>();l11.add("n");l11.add("power-node");
         standartCode.add(l1);
         standartCode.add(l2);
         standartCode.add(l3);
