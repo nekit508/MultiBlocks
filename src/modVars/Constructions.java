@@ -107,7 +107,7 @@ public class Constructions {
                     "ffffffttttpppppttttfffffff\n" +
                     "fffffffffttfffttffffffffff\n" +
                     "ffffffffffffifffffffffffff\n" ;
-            liquidFactory.offSet = -13;
+            fusionReactor.offSet = -13;
             parse(fr, fusionReactor, ConstructionDicts.standartCode);
         }
     }
