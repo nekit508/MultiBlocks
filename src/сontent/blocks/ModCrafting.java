@@ -78,5 +78,15 @@ public class ModCrafting implements ContentList {
             consumes.liquid(Liquids.oil, 1);
             outputLiquid = new LiquidStack(Liquids.cryofluid, 1);
         }};
+        multiReactor = new MultiBlockCenter("multi-block-reactor"){{
+            construction = Constructions.fusionReactor;
+            size = 1;
+            health = 100;
+            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+            consumes.power(20);
+            consumes.items(ItemStack.with(Items.coal, 2));
+            consItems = ItemStack.with(Items.coal, 2);
+            outputItem = new ItemStack(Items.graphite, 1);
+        }};
     }
 }
