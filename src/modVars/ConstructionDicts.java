@@ -16,9 +16,9 @@ public class ConstructionDicts {
         ArrayList<String> l6 = new ArrayList<>();l6.add("l");l6.add("mod-java-mod-multi-block-liquid-inner");
         ArrayList<String> l7 = new ArrayList<>();l7.add("h");l7.add("mod-java-mod-multi-block-liquid-outer");
         ArrayList<String> l8 = new ArrayList<>();l8.add("t");l8.add("titanium-wall");
-        ArrayList<String> 19 = new ArrayList<>();19.add("p");19.add("pulse-conduit");
-        ArrayList<String> 20 = new ArrayList<>();20.add("w");20.add("thorium-wall");
-        ArrayList<String> 21 = new ArrayList<>();21.add("n");21.add("power-node");
+        ArrayList<String> l9 = new ArrayList<>();l9.add("p");l9.add("pulse-conduit");
+        ArrayList<String> l8 = new ArrayList<>();l20.add("w");l10.add("thorium-wall");
+        ArrayList<String> l1 = new ArrayList<>();l21.add("n");l11.add("power-node");
         standartCode.add(l1);
         standartCode.add(l2);
         standartCode.add(l3);
@@ -27,8 +27,8 @@ public class ConstructionDicts {
         standartCode.add(l6);
         standartCode.add(l7);
         standartCode.add(l8);
-        standartCode.add(19);
-        standartCode.add(20);
-        standartCode.add(21);
+        standartCode.add(l9);
+        standartCode.add(l10);
+        standartCode.add(l11);
     }
 }
