@@ -6,7 +6,7 @@ import modClasses.Construction;
 import java.util.ArrayList;
 
 public class Constructions {
-    public static Construction siliconFactory,graphiteFactory,metaglassFactory,solidFuelGenerator,liquidFactory;
+    public static Construction siliconFactory,graphiteFactory,metaglassFactory,solidFuelGenerator,liquidFactory,fusionReactor;
 
     public static void parse(String str,Construction cons,ArrayList<ArrayList<String>> list){
         int z = 0;
