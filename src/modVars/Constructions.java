@@ -78,5 +78,37 @@ public class Constructions {
             liquidFactory.offSet = -1;
             parse(sf, liquidFactory, ConstructionDicts.standartCode);
         }
+        {
+            fusionReactor = new Construction();
+            String fr = "ffffffffffffifffffffffffff\n" +
+					"fffffffffttfffttffffffffff\n" +
+					"ffffffttttpppppttttfffffff\n" +
+					"fffftttpppptttpppptttfffff\n" +
+					"fffttpppttttwttttpppttffff\n" +
+					"ffttpptttffwwwfftttppttfff\n" +
+					"fftppttfffffwfffffttpptfff\n" +
+					"fttpttffffffwffffffttpttff\n" +
+					"ftpptfffffffwffffffftpptff\n" +
+					"ftpttfffffffwfffffffttptff\n" +
+					"ttptffffffffwfffffffftpttf\n" +
+					"tpptfffffffwwwffffffftpptf\n" +
+					"tpttwfffffwfffwfffffwttpff\n" +
+					"nptwwwwwwwwfffwwwwwwwwtpfi\n" +
+					"tpttwfffffwfffwfffffwttpff\n" +
+					"tpptfffffffwwwffffffftpptf\n" +
+					"ttptffffffffwfffffffftpttf\n" +
+					"ftpttfffffffwfffffffttptff\n" +
+					"ftpptfffffffwffffffftpptff\n" +
+					"fttpttffffffwffffffttpttff\n" +
+					"fftppttfffffwfffffttpptfff\n" +
+					"ffttpptttffwwwfftttppttfff\n" +
+					"fffttpppttttwttttpppttffff\n" +
+					"fffftttpppptttpppptttfffff\n" +
+					"ffffffttttpppppttttfffffff\n" +
+                    "fffffffffttfffttffffffffff\n" +
+					"ffffffffffffifffffffffffff\n" ;
+            liquidFactory.offSet = -13;
+            parse(fr, fusionReactor, ConstructionDicts.standartCode);
+        }
     }
 }
