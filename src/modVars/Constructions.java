@@ -93,7 +93,7 @@ public class Constructions {
                     "ttptffffffffwfffffffftpttf\n" +
                     "tpptfffffffwwwffffffftpptf\n" +
                     "tpttwfffffwfffwfffffwttpff\n" +
-                    "nptwwwwwwwwfffwwwwwwwwtpfi\n" +
+                    "nptwwwwwwwwfffwwwwwwwwtpfo\n" +
                     "tpttwfffffwfffwfffffwttpff\n" +
                     "tpptfffffffwwwffffffftpptf\n" +
                     "ttptffffffffwfffffffftpttf\n" +
@@ -106,7 +106,7 @@ public class Constructions {
                     "fffftttpppptttpppptttfffff\n" +
                     "ffffffttttpppppttttfffffff\n" +
                     "fffffffffttfffttffffffffff\n" +
-                    "ffffffffffffifffffffffffff\n" ;
+                    "ffffffffffffifffffffffffff";
             fusionReactor.offSet = -13;
             parse(fr, fusionReactor, ConstructionDicts.standartCode);
         }
