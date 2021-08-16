@@ -78,7 +78,7 @@ public class ModCrafting implements ContentList {
             consumes.liquid(Liquids.oil, 1);
             outputLiquid = new LiquidStack(Liquids.cryofluid, 1);
         }};
-        multiReactor = new MultiBlockCenter("multi-block-reactor"){{
+        multiReactor = new FusionReactor("multi-block-reactor"){{
             construction = Constructions.fusionReactor;
             size = 1;
             health = 100;

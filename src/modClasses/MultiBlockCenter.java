@@ -8,6 +8,7 @@ import mindustry.type.ItemStack;
 import mindustry.type.LiquidStack;
 import mindustry.world.Block;
 import mindustry.world.blocks.production.GenericCrafter;
+import mindustry.world.meta.Stat;
 
 import static mindustry.Vars.*;
 
@@ -23,6 +24,11 @@ public class MultiBlockCenter extends GenericCrafter {
         update = true;
         itemCapacity = 10;
         hasItems = true;
+    }
+
+    @Override
+    public void setStats() {
+        super.setStats();
     }
 
     public class MultiBuildingCenter extends GenericCrafterBuild {
@@ -60,8 +66,10 @@ public class MultiBlockCenter extends GenericCrafter {
             ending = 0;
             for(int i = 0; i < construction.data.size(); i++){
                 for(int z = 0; z < construction.data.get(i).size(); z++){
-                    if(!world.tileWorld(x + i*tilesize + construction.offSet*tilesize, y + z*tilesize + construction.offSet*tilesize).block().name.equals(construction.data.get(i).get(z)) && !construction.data.get(i).get(z).equals("off")){
-                        return false;
+                    if(world.tileWorld(x + i*tilesize + construction.offSet*tilesize, y + z*tilesize + construction.offSet*tilesize) != null){
+                        if (!world.tileWorld(x + i * tilesize + construction.offSet * tilesize, y + z * tilesize + construction.offSet * tilesize).block().name.equals(construction.data.get(i).get(z)) && !construction.data.get(i).get(z).equals("off")) {
+                            return false;
+                        }
                     }
                 }
             }
