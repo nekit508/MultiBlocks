@@ -30,6 +30,7 @@ public class Constructions {
     public static void init(){
         {
             siliconFactory = new Construction();
+            siliconFactory.points = new int[][]{{0,0},{0,2},{2,0}};
             String sf = "ibi\n" +
                     "bfb\n" +
                     "obb";
@@ -38,6 +39,7 @@ public class Constructions {
         }
         {
             graphiteFactory = new Construction();
+            graphiteFactory.points = new int[][]{{0,2},{4,2}};
             String gf = "fbibf\n" +
                     "bfffb\n" +
                     "bfffb\n" +
@@ -48,6 +50,7 @@ public class Constructions {
         }
         {
             metaglassFactory = new Construction();
+            metaglassFactory.points = new int[][]{{2,0},{4,0},{6,3}};
             String mgf = "fffcfff\n" +
                     "ffbbbff\n" +
                     "ibfffbf\n" +
@@ -80,33 +83,35 @@ public class Constructions {
         }
         {
             fusionReactor = new Construction();
-            String fr = "ffffffffffffifffffffffffff\n" +
-                    "fffffffffttfffttffffffffff\n" +
-                    "ffffffttttpppppttttfffffff\n" +
-                    "fffftttpppptttpppptttfffff\n" +
-                    "fffttpppttttwttttpppttffff\n" +
-                    "ffttpptttffwwwfftttppttfff\n" +
-                    "fftppttfffffwfffffttpptfff\n" +
-                    "fttpttffffffwffffffttpttff\n" +
-                    "ftpptfffffffwffffffftpptff\n" +
-                    "ftpttfffffffwfffffffttptff\n" +
-                    "ttptffffffffwfffffffftpttf\n" +
-                    "tpptfffffffwwwffffffftpptf\n" +
-                    "tpttwfffffwfffwfffffwttpff\n" +
-                    "nptwwwwwwwwfffwwwwwwwwtpfo\n" +
-                    "tpttwfffffwfffwfffffwttpff\n" +
-                    "tpptfffffffwwwffffffftpptf\n" +
-                    "ttptffffffffwfffffffftpttf\n" +
-                    "ftpttfffffffwfffffffttptff\n" +
-                    "ftpptfffffffwffffffftpptff\n" +
-                    "fttpttffffffwffffffttpttff\n" +
-                    "fftppttfffffwfffffttpptfff\n" +
-                    "ffttpptttffwwwfftttppttfff\n" +
-                    "fffttpppttttwttttpppttffff\n" +
-                    "fffftttpppptttpppptttfffff\n" +
-                    "ffffffttttpppppttttfffffff\n" +
-                    "fffffffffttfffttffffffffff\n" +
-                    "ffffffffffffifffffffffffff";
+            fusionReactor.points = new int[][]{{0,13},{26,13},{13,26}};
+            String fr = "fffffffffffffifffffffffffff\n" +
+                    "ffffffffffttfffttffffffffff\n" +
+                    "fffffffttttpppppttttfffffff\n" +
+                    "ffffftttpppptttpppptttfffff\n" +
+                    "ffffttpppttttwttttpppttffff\n" +
+                    "fffttpptttffwwwfftttppttfff\n" +
+                    "ffftppttfffffwfffffttpptfff\n" +
+                    "ffttpttffffffwffffffttpttff\n" +
+                    "fftpptfffffffwffffffftpptff\n" +
+                    "fftpttfffffffwfffffffttptff\n" +
+                    "fttptffffffffwfffffffftpttf\n" +
+                    "ftpptfffffffwwwffffffftpptf\n" +
+                    "ftpttwfffffwfffwfffffwttpff\n" +
+                    "ftntwwwwwwwwfffwwwwwwwwtpfo\n" +
+                    "ftpttwfffffwfffwfffffwttpff\n" +
+                    "ftpptfffffffwwwffffffftpptf\n" +
+                    "fttptffffffffwfffffffftpttf\n" +
+                    "fftpttfffffffwfffffffttptff\n" +
+                    "fftpptfffffffwffffffftpptff\n" +
+                    "ffttpttffffffwffffffttpttff\n" +
+                    "ffftppttfffffwfffffttpptfff\n" +
+                    "fffttpptttffwwwfftttppttfff\n" +
+                    "ffffttpppttttwttttpppttffff\n" +
+                    "ffffftttpppptttpppptttfffff\n" +
+                    "fffffffttttpppppttttfffffff\n" +
+                    "ffffffffffttfffttffffffffff\n" +
+                    "fffffffffffffifffffffffffff\n" +
+                    "fffffffffffffffffffffffffff";
             fusionReactor.offSet = -13;
             parse(fr, fusionReactor, ConstructionDicts.standartCode);
         }
