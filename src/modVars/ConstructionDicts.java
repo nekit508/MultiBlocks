@@ -19,6 +19,7 @@ public class ConstructionDicts {
         ArrayList<String> l9 = new ArrayList<>();l9.add("p");l9.add("pulse-conduit");
         ArrayList<String> l10 = new ArrayList<>();l10.add("w");l10.add("thorium-wall");
         ArrayList<String> l11 = new ArrayList<>();l11.add("n");l11.add("power-node");
+        ArrayList<String> l12 = new ArrayList<>();l12.add("n");l11.add("plastanium-compressor");
         standartCode.add(l1);
         standartCode.add(l2);
         standartCode.add(l3);
@@ -30,5 +31,6 @@ public class ConstructionDicts {
         standartCode.add(l9);
         standartCode.add(l10);
         standartCode.add(l11);
+        standartCode.add(l12);
     }
 }

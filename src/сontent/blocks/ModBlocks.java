@@ -6,10 +6,11 @@ import mindustry.world.Block;
 public class ModBlocks implements ContentList {
     public static Block
             // defense
-            leadWall,largeLeadWall,metaglassWall,largeMetaglassWall,siliconWall,largeSiliconWall,forceWall,magneticShield,batteryWall,electroInterfaceWall,
+            leadWall,largeLeadWall,metaglassWall,largeMetaglassWall,siliconWall,largeSiliconWall,forceWall,magneticShield,
             // production
             // multi blocks
-            multiSilicon,inner,outer,liquidOuter,liquidInner,multiGraphite,multiMetaglass,multiPowerGenerator,multiLiquid,multiReactor;
+            multiSilicon,inner,outer,liquidOuter,liquidInner,electricInterface,multiGraphite,multiMetaglass,multiPowerGenerator,
+                    multiLiquid,multiReactor,battery,electroInterface;
 
     @Override
     public void load() {

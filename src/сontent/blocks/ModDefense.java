@@ -80,14 +80,14 @@ public class ModDefense implements ContentList {
             consumes.power(1);
             consumes.item(Items.phaseFabric).boost();
         }};
-		batteryWall = new Wall("battery-wall"){{
+		battery = new Wall("battery"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 150;
             size = 1;
-            requirements(Category.defense, ItemStack.with(Items.copper, 50, Items.lead 100));
+            requirements(Category.defense, ItemStack.with(Items.copper, 50, Items.lead, 100));
         }};
-		electroInterfaceWall = new Wall("electroInterface-wall"){{
+		electroInterface = new Wall("electrointerface"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 150;

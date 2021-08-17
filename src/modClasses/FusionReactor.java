@@ -1,35 +1,51 @@
 package modClasses;
 
-import arc.graphics.Color;
-import mindustry.content.Liquids;
-import mindustry.entities.bullet.*;
-import mindustry.game.Team;
-import mindustry.gen.Teamc;
-
-import java.util.Random;
+import arc.graphics.g2d.Draw;
+import arc.graphics.g2d.TextureRegion;
+import arc.util.Log;
+import modVars.Effects;
+import mindustry.annotations.Annotations.*;
 
 public class FusionReactor extends MultiBlockCenter{
-    Random rand = new Random();
-    LiquidBulletType bullet = new LiquidBulletType(Liquids.slag){{
-        damage = 500f;
-        speed = 8f;
-        drag = 0.01f;
-        lifetime = 100;
-        collidesAir = false;
-        collidesTeam = true;
-    }};
+    public int[] inPoint;
+    private @Load("@-warmupregion") TextureRegion warmUpRegion;
     public FusionReactor(String name) {
         super(name);
     }
 
+    @Override
+    public void setBars() {
+        super.setBars();
+        // TODO warmup bar
+    }
+
     public class FusionReactorBuild extends MultiBuildingCenter{
+        float warmUp = 0f;
         @Override
         public void onDestroyed() {
             super.onDestroyed();
-            for(float i = 0; i < 360; i += 0.8f){
-                bullet.speed = (float) Math.random()*6;
-                bullet.lifetime = 100f + (float) rand.nextInt(20) - 10f;
-                bullet.create(this, Team.derelict, x, y, i);
+            if(warmUp > 0.8){
+                Effects.FusionReactorExplode(x, y, this);
+            }
+        }
+
+        @Override
+        public void draw() {
+            super.draw();
+            Draw.alpha(warmUp);
+            Log.info(warmUpRegion);
+            Draw.rect(warmUpRegion, x, y);
+        }
+
+        @Override
+        public void update() {
+            if(structureEnded && warmUp < 1f) {
+                warmUp += 1f / (60f * 5f);
+            }else{
+                warmUp = 0;
+            }
+            if(warmUp > 0.95f) {
+                super.update();
             }
         }
     }

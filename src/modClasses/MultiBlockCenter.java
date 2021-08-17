@@ -1,6 +1,5 @@
 package modClasses;
-import arc.Core;
-import arc.graphics.Color;
+
 import arc.graphics.g2d.Draw;
 import arc.util.Log;
 import mindustry.gen.Building;
@@ -8,8 +7,6 @@ import mindustry.type.ItemStack;
 import mindustry.type.LiquidStack;
 import mindustry.world.Block;
 import mindustry.world.blocks.production.GenericCrafter;
-import mindustry.world.meta.Stat;
-
 import static mindustry.Vars.*;
 
 public class MultiBlockCenter extends GenericCrafter {
@@ -29,6 +26,7 @@ public class MultiBlockCenter extends GenericCrafter {
     @Override
     public void setStats() {
         super.setStats();
+        //TODO add structure to description
     }
 
     public class MultiBuildingCenter extends GenericCrafterBuild {
@@ -51,7 +49,6 @@ public class MultiBlockCenter extends GenericCrafter {
 
         @Override
         public void update() {
-            tickCounter ++;
             if(tickCounter > 60){
                 tickCounter = 0;
                 structureEnded = checkTiles();
@@ -60,6 +57,7 @@ public class MultiBlockCenter extends GenericCrafter {
                 lootItems();
                 super.update();
             }
+            tickCounter ++;
         }
 
         public boolean checkTiles(){

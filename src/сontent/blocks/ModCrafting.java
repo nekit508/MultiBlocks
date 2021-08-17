@@ -6,6 +6,7 @@ import mindustry.ctype.ContentList;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
 import mindustry.type.LiquidStack;
+import mindustry.world.blocks.defense.Wall;
 import modClasses.*;
 import modVars.Constructions;
 
@@ -45,6 +46,9 @@ public class ModCrafting implements ContentList {
             size = 1;
             health = 100;
             requirements(Category.crafting, ItemStack.with(Items.titanium, 32));
+        }};
+        electricInterface = new Wall("electric-interface"){{
+
         }};
         multiGraphite = new MultiBlockCenter("multi-block-graphite"){{
             construction = Constructions.graphiteFactory;
@@ -87,6 +91,7 @@ public class ModCrafting implements ContentList {
             consumes.items(ItemStack.with(Items.coal, 2));
             consItems = ItemStack.with(Items.coal, 2);
             outputItem = new ItemStack(Items.graphite, 1);
+            inPoint = new int[]{0,0};
         }};
     }
 }
