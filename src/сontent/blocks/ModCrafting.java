@@ -27,29 +27,6 @@ public class ModCrafting implements ContentList {
             consumes.items(ItemStack.with(Items.coal, 1, Items.sand, 2));
             outputItem = new ItemStack(Items.silicon, 2);
         }};
-        inner = new MultiBlockInner("multi-block-inner"){{
-            size = 1;
-            health = 100;
-            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
-        }};
-        outer = new MultiBlockOuter("multi-block-outer"){{
-            size = 1;
-            health = 100;
-            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
-        }};
-        liquidInner = new MultiBlockLiquidInner("multi-block-liquid-inner"){{
-            size = 1;
-            health = 100;
-            requirements(Category.crafting, ItemStack.with(Items.titanium, 32));
-        }};
-        liquidOuter = new MultiBlockLiquidOuter("multi-block-liquid-outer"){{
-            size = 1;
-            health = 100;
-            requirements(Category.crafting, ItemStack.with(Items.titanium, 32));
-        }};
-        electricInterface = new Wall("electric-interface"){{
-
-        }};
         multiGraphite = new MultiBlockCenter("multi-block-graphite"){{
             construction = Constructions.graphiteFactory;
             size = 1;
@@ -92,6 +69,23 @@ public class ModCrafting implements ContentList {
             consItems = ItemStack.with(Items.coal, 2);
             outputItem = new ItemStack(Items.graphite, 1);
             inPoint = new int[]{0,0};
+        }};
+        oilFactory = new MultiBlockCenter("multi-block-oil-factory"){{
+            construction = Constructions.oilFactory;
+            liquidCapacity = 500f;
+            itemCapacity = 10;
+            size = 1;
+            health = 100;
+            hasLiquids = true;
+            hasItems = true;
+            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+            consLiquid = new LiquidStack[]{new LiquidStack(Liquids.oil, 1)};
+            consItems = new ItemStack[]{new ItemStack(Items.titanium, 1)};
+            consumes.power(8);
+            consumes.liquid(Liquids.oil, 1f);
+            consumes.items(ItemStack.with(Items.titanium, 8));
+            outputItem = new ItemStack(Items.plastanium, 5);
+            craftTime = 60f;
         }};
     }
 }

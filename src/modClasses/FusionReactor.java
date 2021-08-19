@@ -1,16 +1,23 @@
 package modClasses;
 
+import arc.Core;
 import arc.graphics.g2d.Draw;
 import arc.graphics.g2d.TextureRegion;
 import arc.util.Log;
 import modVars.Effects;
-import mindustry.annotations.Annotations.*;
+//import mindustry.annotations.Annotations.*;
 
 public class FusionReactor extends MultiBlockCenter{
     public int[] inPoint;
-    private @Load("@-warmupregion") TextureRegion warmUpRegion;
+    private TextureRegion warmUpRegion;
     public FusionReactor(String name) {
         super(name);
+    }
+
+    @Override
+    public void load() {
+        super.load();
+        warmUpRegion = Core.atlas.find(name + "-warmupregion");
     }
 
     @Override
@@ -21,11 +28,12 @@ public class FusionReactor extends MultiBlockCenter{
 
     public class FusionReactorBuild extends MultiBuildingCenter{
         float warmUp = 0f;
+        float curAngle = 0f;
         @Override
         public void onDestroyed() {
             super.onDestroyed();
             if(warmUp > 0.8){
-                Effects.FusionReactorExplode(x, y, this);
+                Effects.FusionReactorExplode(x, y, this, tile);
             }
         }
 
@@ -33,20 +41,28 @@ public class FusionReactor extends MultiBlockCenter{
         public void draw() {
             super.draw();
             Draw.alpha(warmUp);
-            Log.info(warmUpRegion);
             Draw.rect(warmUpRegion, x, y);
         }
 
         @Override
         public void update() {
-            if(structureEnded && warmUp < 1f) {
-                warmUp += 1f / (60f * 5f);
+            if(tickCounter > 60){
+                tickCounter = 0;
+                structureEnded = checkTiles();
+            }
+            if(structureEnded){
+                if(warmUp >= 1f) {
+                    lootItems();
+                    craft();
+                }else{
+                    warmUp += 1f / 300f;
+                }
             }else{
-                warmUp = 0;
+                warmUp = 0f;
             }
-            if(warmUp > 0.95f) {
-                super.update();
-            }
+            tickCounter ++;
+            curAngle += warmUp;
+            if(curAngle >= 360f) curAngle = 0f;
         }
     }
 }

@@ -1,5 +1,6 @@
 package сontent.blocks;
 
+import arc.util.Log;
 import mindustry.ctype.ContentList;
 import mindustry.world.Block;
 
@@ -9,11 +10,14 @@ public class ModBlocks implements ContentList {
             leadWall,largeLeadWall,metaglassWall,largeMetaglassWall,siliconWall,largeSiliconWall,forceWall,magneticShield,
             // production
             // multi blocks
-            multiSilicon,inner,outer,liquidOuter,liquidInner,electricInterface,multiGraphite,multiMetaglass,multiPowerGenerator,
-                    multiLiquid,multiReactor,battery,electroInterface;
+            multiSilicon,multiGraphite,multiMetaglass,multiPowerGenerator,
+                    multiLiquid,multiReactor,oilFactory,
+            // multi blocks's parts
+            inner,outer,liquidOuter,liquidInner,battery,electricInterface;
 
     @Override
     public void load() {
+        Log.info("Loading blocks");
         for (ContentList contentList : blocksContent) {
             contentList.load();
         }
@@ -22,6 +26,7 @@ public class ModBlocks implements ContentList {
     private ContentList[] blocksContent = {
             new ModDefense(),
             new ModCrafting(),
-            new ModPower()
+            new ModPower(),
+            new ModParts()
     };
 }

@@ -1,5 +1,6 @@
-package сontent.weather;
+package сontent.weathers;
 
+import arc.util.Log;
 import mindustry.ctype.ContentList;
 import mindustry.type.Weather;
 import modClasses.SlagRain;
@@ -9,6 +10,7 @@ public class ModWeather implements ContentList {
 
     @Override
     public void load() {
+        Log.info("Loading weathers");
         for (ContentList contentList : weatherContent) {
             contentList.load();
         }

@@ -1,17 +1,18 @@
 package modVars;
 
 import mindustry.content.Liquids;
+import mindustry.entities.Damage;
+import mindustry.entities.Effect;
 import mindustry.entities.Puddles;
 import mindustry.entities.bullet.LiquidBulletType;
 import mindustry.game.Team;
 import mindustry.gen.Bullet;
 import mindustry.gen.Entityc;
 import mindustry.gen.Fire;
-import mindustry.gen.Puddle;
+import mindustry.gen.Sounds;
 import mindustry.type.Liquid;
-import mindustry.type.Weather;
-import modClasses.SlagRain;
-import сontent.weather.ModWeather;
+import mindustry.world.Tile;
+import сontent.weathers.ModWeather;
 
 import java.util.Random;
 
@@ -50,12 +51,15 @@ public class Effects {
         fire.puddleFlammability = 1f;
         fire.add();
     }
-    public static void FusionReactorExplode(float x, float y, Entityc o){
-        for(float i = 0; i < 360; i += 0.8f){
+    public static void FusionReactorExplode(float x, float y, Entityc o, Tile tile){
+        for(float i = 0; i < 360; i += 0.5f){
             FusionReactorExplode.speed = (float) Math.random()*6;
             FusionReactorExplode.lifetime = 100f + (float) rand.nextInt(20) - 10f;
             FusionReactorExplode.create(o, Team.derelict, x, y, i);
-            ModWeather.slagRain.create(1f, 360f);
         }
-    };
+        Sounds.explosionbig.at(tile);
+        Damage.damage(x, y, 15 * tilesize, 2000);
+        Effect.shake(3f, 60f, x, y);
+        ModWeather.slagRain.create(1f, 3600f);
+    }
 }

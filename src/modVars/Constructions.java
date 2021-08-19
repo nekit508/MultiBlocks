@@ -1,14 +1,14 @@
 package modVars;
 
-import arc.util.Log;
 import modClasses.Construction;
 
 import java.util.ArrayList;
 
 public class Constructions {
-    public static Construction siliconFactory,graphiteFactory,metaglassFactory,solidFuelGenerator,liquidFactory,fusionReactor;
+    public static Construction siliconFactory,graphiteFactory,metaglassFactory,solidFuelGenerator,
+            liquidFactory,fusionReactor,oilFactory;
 
-    public static void parse(String str,Construction cons,ArrayList<ArrayList<String>> list){
+    public static void parse(String str,Construction cons,String[][] list){
         int z = 0;
         cons.data.add(new ArrayList<String>());
         for(int i = 0;i < str.length();i++){
@@ -17,9 +17,9 @@ public class Constructions {
                 z += 1;
                 cons.data.add(new ArrayList<String>());
             }else{
-                for(int ind = 0;ind < list.size();ind++){
-                    if(symbol.equals(list.get(ind).get(0))){
-                        symbol = list.get(ind).get(1);
+                for(int ind = 0;ind < list.length;ind++){
+                    if(symbol.equals(list[ind][0])){
+                        symbol = list[ind][1];
                     }
                 }
                 cons.data.get(z).add(symbol);
@@ -35,7 +35,7 @@ public class Constructions {
                     "bfb\n" +
                     "obb";
             siliconFactory.offSet = -1;
-            parse(sf, siliconFactory, ConstructionDicts.standartCode);
+            parse(sf, siliconFactory, ConstructionDicts.siliconFactory);
         }
         {
             graphiteFactory = new Construction();
@@ -46,7 +46,7 @@ public class Constructions {
                     "bfffb\n" +
                     "fbobf\n";
             graphiteFactory.offSet = -2;
-            parse(gf,graphiteFactory, ConstructionDicts.standartCode);
+            parse(gf,graphiteFactory, ConstructionDicts.graphiteFactory);
         }
         {
             metaglassFactory = new Construction();
@@ -59,7 +59,7 @@ public class Constructions {
                     "ffbbbff\n" +
                     "fffсfff";
             metaglassFactory.offSet = -3;
-            parse(mgf,metaglassFactory, ConstructionDicts.standartCode);
+            parse(mgf,metaglassFactory, ConstructionDicts.metaglassFactory);
         }
         {
             solidFuelGenerator = new Construction();
@@ -71,15 +71,29 @@ public class Constructions {
                     "cbbbbbc\n" +
                     "ccciccc";
             solidFuelGenerator.offSet = -3;
-            parse(sfg,solidFuelGenerator, ConstructionDicts.standartCode);
+            parse(sfg,solidFuelGenerator, ConstructionDicts.solidFuelGenerator);
         }
         {
             liquidFactory = new Construction();
-            String sf = "bbl\n" +
+            String sf = "bbi\n" +
                     "bfb\n" +
-                    "hbb";
+                    "obb";
             liquidFactory.offSet = -1;
-            parse(sf, liquidFactory, ConstructionDicts.standartCode);
+            parse(sf, liquidFactory, ConstructionDicts.liquidFactory);
+        }
+        {
+            oilFactory = new Construction();
+            oilFactory.points = new int[][]{{1,1},{4,1},{4,1},{5,1},{4,3},{4,4}};
+            String of = "ftttt\n" +
+                    "flppt\n" +
+                    "ftbpt\n" +
+                    "fitfq\n" +
+                    "fitno\n" +
+                    "ftbpt\n" +
+                    "flppt\n" +
+                    "ftttt";
+            oilFactory.offSet = -3;
+            parse(of, oilFactory, ConstructionDicts.oilFactory);
         }
         {
             fusionReactor = new Construction();
@@ -113,7 +127,7 @@ public class Constructions {
                     "fffffffffffffifffffffffffff\n" +
                     "fffffffffffffffffffffffffff";
             fusionReactor.offSet = -13;
-            parse(fr, fusionReactor, ConstructionDicts.standartCode);
+            parse(fr, fusionReactor, ConstructionDicts.fusionReactor);
         }
     }
 }

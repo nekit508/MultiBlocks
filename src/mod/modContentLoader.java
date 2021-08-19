@@ -22,7 +22,10 @@ import mindustry.type.*;
 import mindustry.world.Block;
 import mindustry.world.ColorMapper;
 import сontent.blocks.ModBlocks;
-import сontent.weather.ModWeather;
+import сontent.blocks.ModDefense;
+import сontent.items.ModItems;
+import сontent.planets.ModPlanets;
+import сontent.weathers.ModWeather;
 
 import static arc.Core.files;
 import static mindustry.Vars.constants;
@@ -52,6 +55,8 @@ public class modContentLoader extends ContentLoader {
     private final ContentList[] modContent = {
             new ModBlocks(),
             new ModWeather(),
+            new ModPlanets(),
+            new ModItems(),
     };
 
     public modContentLoader(){

@@ -47,6 +47,10 @@ public class MultiBlockCenter extends GenericCrafter {
             }
         }
 
+        public void craft(){
+            super.update();
+        }
+
         @Override
         public void update() {
             if(tickCounter > 60){
@@ -55,7 +59,7 @@ public class MultiBlockCenter extends GenericCrafter {
             }
             if(structureEnded){
                 lootItems();
-                super.update();
+                craft();
             }
             tickCounter ++;
         }
@@ -93,13 +97,13 @@ public class MultiBlockCenter extends GenericCrafter {
                             liquids.remove(outputLiquid.liquid, amount);
                             build.liquids.add(outputLiquid.liquid, amount);
                         }
-                    } else if (build.block.name.equals("mod-java-mod-multi-block-inner")) {
+                    } else if (build.block.name.equals("mod-java-mod-multi-block-inner") && consItems.length > 0) {
                         for (ItemStack cons : consItems) {
                             int amount = Math.min(build.items.get(cons.item), block.itemCapacity - items.get(cons.item));
                             build.items.remove(cons.item, amount);
                             items.add(cons.item, amount);
                         }
-                    } else if (build.block.name.equals("mod-java-mod-multi-block-liquid-inner")) {
+                    } else if (build.block.name.equals("mod-java-mod-multi-block-liquid-inner") && consLiquid.length > 0) {
                         for (LiquidStack cons : consLiquid) {
                             float amount = Math.min(build.liquids.get(cons.liquid), block.liquidCapacity - liquids.get(cons.liquid));
                             build.liquids.remove(cons.liquid, amount);
