@@ -15,5 +15,10 @@ public class ModItems implements ContentList {
             hardness = 3;
             alwaysUnlocked = false;
         }};
+        tritium = new Item("item-tritium"){{
+            cost = 1f;
+            hardness = 3;
+            alwaysUnlocked = false;
+        }};
     }
 }
