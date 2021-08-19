@@ -5,7 +5,7 @@ import mindustry.ctype.ContentList;
 import mindustry.type.Item;
 
 public class ModItems implements ContentList {
-    public static Item deuterium;
+    public static Item deuterium,Item tritium;
 
     @Override
     public void load() {
