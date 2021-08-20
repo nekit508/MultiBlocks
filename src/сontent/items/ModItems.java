@@ -10,7 +10,7 @@ public class ModItems implements ContentList {
     @Override
     public void load() {
         Log.info("Loading items");
-        deuterium = new Item('gas-deuterium"){{
+        deuterium = new Item("gas-deuterium"){{
             cost = 1f;
             hardness = 3;
             alwaysUnlocked = false;
