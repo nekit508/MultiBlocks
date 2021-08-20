@@ -63,6 +63,7 @@ public class Constructions {
         }
         {
             solidFuelGenerator = new Construction();
+            solidFuelGenerator.points = new int[][]{{2,0},{0,2},{5,2},{2,5}};
             String sfg = "ccciccc\n" +
                     "cbbbbbc\n" +
                     "cbbbbbc\n" +
@@ -75,6 +76,7 @@ public class Constructions {
         }
         {
             liquidFactory = new Construction();
+            liquidFactory.points = new int[][]{{1,0},{0,1}};
             String sf = "bbi\n" +
                     "bfb\n" +
                     "obb";
@@ -131,17 +133,23 @@ public class Constructions {
         }
         {
             electrolyzer = new Construction();
-            electrolyzer.points = new int[][]{{3,6},{4,2},{5,6}};
-            String el = "ffffsff\n" +
-                    "fffsnsb\n" +
-                    "fftffft\n" +
-                    "fftfffo\n" +
-                    "ffiffft\n" +
-                    "fftfffo\n" +
-                    "fftffft\n" +
-                    "fffsnsb\n" +
-                    "ffffsff";
-            electrolyzer.offSet = -4;
+            electrolyzer.points = new int[][]{{0,3},{0,9},{13,6}};
+            String el = "fffffmmnmmfffff\n" +
+                    "fffmomfffmomfff\n" +
+                    "fbmmfffffffmmbf\n" +
+                    "fmmffcccccffmmf\n" +
+                    "fmfffffffffffmf\n" +
+                    "mmftttttttttfmm\n" +
+                    "mfffffpppfffffm\n" +
+                    "mfccccpfpccccfm\n" +
+                    "mfffffpppfffffm\n" +
+                    "mmftttttttttfmm\n" +
+                    "fmfffffffffffmf\n" +
+                    "fmmffcccccffmmf\n" +
+                    "ffmmfffffffmmff\n" +
+                    "fffmmmfffmmmfff\n" +
+                    "fffffmmommfffff\n";
+            electrolyzer.offSet = -7;
             parse(el, electrolyzer, ConstructionDicts.electrolyzerDict);
         }
     }
