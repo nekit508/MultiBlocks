@@ -39,7 +39,7 @@ public class ConstructionDicts {
             {"o", "mod-java-mod-multi-block-outer"},
             {"f", "off"},
             {"n", "mod-java-mod-electric-interface"},
-            {"p", "pulse-conduit"},
+            {"p", "pulse-conduit-0"},
             {"t", "titanium-wall"},
     };
     public static String[][] oilFactoryDict = new String[][]{
