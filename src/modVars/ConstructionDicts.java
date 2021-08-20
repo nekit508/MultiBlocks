@@ -60,6 +60,6 @@ public class ConstructionDicts {
             {"n", "mod-java-mod-electric-interface"},
             {"t", "titanium-wall"},
             {"b", "mod-java-mod-battery"},
-            {"b", "mod-java-mod-silicon-wall"},
+            {"m", "mod-java-mod-metaglass-wall"},
     };
 }
