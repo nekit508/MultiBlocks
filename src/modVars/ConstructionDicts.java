@@ -49,7 +49,7 @@ public class ConstructionDicts {
             {"q", "mod-java-mod-multi-block-liquid-outer"},
             {"f", "off"},
             {"n", "mod-java-mod-electric-interface"},
-            {"p", "pulse-conduit"},
+            {"p", "pulse-conduit-0"},
             {"t", "titanium-wall"},
             {"b", "mod-java-mod-battery"},
     };
