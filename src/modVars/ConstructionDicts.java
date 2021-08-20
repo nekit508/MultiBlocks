@@ -21,9 +21,9 @@ public class ConstructionDicts {
             {"c", "copper-wall"},
     };
     public static String[][] solidFuelGeneratorDict = new String[][]{
-            {"i", "mod-java-mod-multi-block-inner"},
+            {"i", "mod-java-mod-multi-block-liquid-inner"},
             {"b", "mod-java-mod-lead-wall"},
-            {"o", "mod-java-mod-multi-block-outer"},
+            {"o", "mod-java-mod-multi-block-liquid-outer"},
             {"f", "off"},
             {"c", "copper-wall"},
     };
