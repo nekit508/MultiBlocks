@@ -54,14 +54,14 @@ public class ModCrafting implements ContentList {
             hasLiquids = true;
             hasItems = false;
             requirements(Category.crafting, ItemStack.with(Items.lead, 32));
-            consLiquid = new LiquidStack[]{new LiquidStack(Liquids.oil, 1)};
+            consLiquids = new LiquidStack[]{new LiquidStack(Liquids.oil, 1)};
             consumes.power(2);
             consumes.liquid(Liquids.oil, 1);
             outputLiquid = new LiquidStack(Liquids.cryofluid, 1);
         }};
         multiReactor = new FusionReactor("multi-block-reactor"){{
             construction = Constructions.fusionReactor;
-            size = 1;
+            size = 3;
             health = 100;
             requirements(Category.crafting, ItemStack.with(Items.lead, 32));
             consumes.power(20);
@@ -79,7 +79,7 @@ public class ModCrafting implements ContentList {
             hasLiquids = true;
             hasItems = true;
             requirements(Category.crafting, ItemStack.with(Items.lead, 32));
-            consLiquid = new LiquidStack[]{new LiquidStack(Liquids.oil, 1)};
+            consLiquids = new LiquidStack[]{new LiquidStack(Liquids.oil, 1)};
             consItems = new ItemStack[]{new ItemStack(Items.titanium, 1)};
             consumes.power(8);
             consumes.liquid(Liquids.oil, 1f);

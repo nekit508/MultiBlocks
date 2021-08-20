@@ -14,7 +14,7 @@ public class MultiBlockCenter extends GenericCrafter {
     public boolean structureEnded = false;
     public Construction construction;
     public ItemStack[] consItems;
-    public LiquidStack[] consLiquid;
+    public LiquidStack[] consLiquids;
     public MultiBlockCenter(String name) {
         super(name);
         solid = true;
@@ -103,8 +103,8 @@ public class MultiBlockCenter extends GenericCrafter {
                             build.items.remove(cons.item, amount);
                             items.add(cons.item, amount);
                         }
-                    } else if (build.block.name.equals("mod-java-mod-multi-block-liquid-inner") && consLiquid.length > 0) {
-                        for (LiquidStack cons : consLiquid) {
+                    } else if (build.block.name.equals("mod-java-mod-multi-block-liquid-inner") && consLiquids.length > 0) {
+                        for (LiquidStack cons : consLiquids) {
                             float amount = Math.min(build.liquids.get(cons.liquid), block.liquidCapacity - liquids.get(cons.liquid));
                             build.liquids.remove(cons.liquid, amount);
                             liquids.add(cons.liquid, amount);

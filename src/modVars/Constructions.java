@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Constructions {
     public static Construction siliconFactory,graphiteFactory,metaglassFactory,solidFuelGenerator,
-            liquidFactory,fusionReactor,oilFactory;
+            liquidFactory,fusionReactor,oilFactory,electrolyzer;
 
     public static void parse(String str,Construction cons,String[][] list){
         int z = 0;
@@ -35,7 +35,7 @@ public class Constructions {
                     "bfb\n" +
                     "obb";
             siliconFactory.offSet = -1;
-            parse(sf, siliconFactory, ConstructionDicts.siliconFactory);
+            parse(sf, siliconFactory, ConstructionDicts.siliconFactoryDict);
         }
         {
             graphiteFactory = new Construction();
@@ -46,7 +46,7 @@ public class Constructions {
                     "bfffb\n" +
                     "fbobf\n";
             graphiteFactory.offSet = -2;
-            parse(gf,graphiteFactory, ConstructionDicts.graphiteFactory);
+            parse(gf,graphiteFactory, ConstructionDicts.graphiteFactoryDict);
         }
         {
             metaglassFactory = new Construction();
@@ -59,7 +59,7 @@ public class Constructions {
                     "ffbbbff\n" +
                     "fffсfff";
             metaglassFactory.offSet = -3;
-            parse(mgf,metaglassFactory, ConstructionDicts.metaglassFactory);
+            parse(mgf,metaglassFactory, ConstructionDicts.metaglassFactoryDict);
         }
         {
             solidFuelGenerator = new Construction();
@@ -71,7 +71,7 @@ public class Constructions {
                     "cbbbbbc\n" +
                     "ccciccc";
             solidFuelGenerator.offSet = -3;
-            parse(sfg,solidFuelGenerator, ConstructionDicts.solidFuelGenerator);
+            parse(sfg,solidFuelGenerator, ConstructionDicts.solidFuelGeneratorDict);
         }
         {
             liquidFactory = new Construction();
@@ -79,7 +79,7 @@ public class Constructions {
                     "bfb\n" +
                     "obb";
             liquidFactory.offSet = -1;
-            parse(sf, liquidFactory, ConstructionDicts.liquidFactory);
+            parse(sf, liquidFactory, ConstructionDicts.liquidFactoryDict);
         }
         {
             oilFactory = new Construction();
@@ -93,7 +93,7 @@ public class Constructions {
                     "flppt\n" +
                     "ftttt";
             oilFactory.offSet = -3;
-            parse(of, oilFactory, ConstructionDicts.oilFactory);
+            parse(of, oilFactory, ConstructionDicts.oilFactoryDict);
         }
         {
             fusionReactor = new Construction();
@@ -127,7 +127,22 @@ public class Constructions {
                     "fffffffffffffifffffffffffff\n" +
                     "fffffffffffffffffffffffffff";
             fusionReactor.offSet = -13;
-            parse(fr, fusionReactor, ConstructionDicts.fusionReactor);
+            parse(fr, fusionReactor, ConstructionDicts.fusionReactorDict);
+        }
+        {
+            electrolyzer = new Construction();
+            electrolyzer.points = new int[][]{{3,6},{4,2},{5,6}};
+            String el = "ffffsff\n" +
+                    "fffsnsb\n" +
+                    "fftffft\n" +
+                    "fftfffo\n" +
+                    "ffiffft\n" +
+                    "fftfffo\n" +
+                    "fftffft\n" +
+                    "fffsnsb\n" +
+                    "ffffsff";
+            electrolyzer.offSet = -4;
+            parse(el, electrolyzer, ConstructionDicts.electrolyzerDict);
         }
     }
 }
