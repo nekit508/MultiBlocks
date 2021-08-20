@@ -59,6 +59,7 @@ public class ConstructionDicts {
             {"f", "off"},
             {"n", "mod-java-mod-electric-interface"},
             {"t", "titanium-wall"},
+            {"c", "copper-wall"},
             {"b", "mod-java-mod-battery"},
             {"m", "mod-java-mod-metaglass-wall"},
     };
