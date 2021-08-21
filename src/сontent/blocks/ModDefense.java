@@ -4,12 +4,12 @@ import mindustry.content.Items;
 import mindustry.ctype.ContentList;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
-import mindustry.world.blocks.defense.ForceProjector;
+// import mindustry.world.blocks.defense.ForceProjector;
 import mindustry.world.blocks.defense.Wall;
 
 import static сontent.blocks.ModBlocks.*;
 
-import modClasses.CircleForceProjector;
+// import modClasses.CircleForceProjector;
 
 public class ModDefense implements ContentList {
     @Override
@@ -17,14 +17,14 @@ public class ModDefense implements ContentList {
         leadWall = new Wall("lead-wall"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
-            health = 400;
+            health = 320;
             size = 1;
             requirements(Category.defense, ItemStack.with(Items.lead, 8));
         }};
         largeLeadWall = new Wall("lead-wall-large"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
-            health = 1600;
+            health = 1280;
             size = 2;
             requirements(Category.defense, ItemStack.with(Items.lead, 32));
         }};
@@ -56,6 +56,10 @@ public class ModDefense implements ContentList {
             size = 2;
             requirements(Category.defense, ItemStack.with(Items.silicon, 32));
         }};
+		/*
+		this is disbalance
+		i dont rnow how fix this disbalance
+		either will not be used, or will be like in "copper mod"
         forceWall = new ForceProjector("force-wall"){{
             health = 750;
             shieldHealth = 2500;
@@ -65,9 +69,11 @@ public class ModDefense implements ContentList {
             size = 2;
             hasItems = false;
             requirements(Category.defense, ItemStack.with(Items.titanium, 40, Items.silicon, 20, Items.graphite, 30));
-            consumes.power(1);
+            consumes.power(3);
             consumes.item(Items.phaseFabric).boost();
         }};
+		does not bring anything new to the gameplay and will be just rubbish.
+		Just in case, let it be
         magneticShield = new CircleForceProjector("magnetic-shield"){{
             health = 750;
             shieldHealth = 2500;
@@ -80,5 +86,6 @@ public class ModDefense implements ContentList {
             consumes.power(1);
             consumes.item(Items.phaseFabric).boost();
         }};
+		*/
     }
 }

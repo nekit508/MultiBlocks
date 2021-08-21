@@ -18,36 +18,36 @@ public class ModParts implements ContentList {
         battery = new Wall("battery"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
-            health = 150;
+            health = 15;
             size = 1;
             requirements(Category.defense, ItemStack.with(Items.copper, 50, Items.lead, 100));
         }};
         electricInterface = new Wall("electric-interface"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
-            health = 150;
+            health = 15;
             size = 1;
             requirements(Category.defense, ItemStack.with(Items.copper, 50, Items.titanium, 50));
         }};
         inner = new MultiBlockInner("multi-block-inner"){{
             size = 1;
-            health = 100;
-            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+            health = 15;
+            requirements(Category.crafting, ItemStack.with(Items.thorium, 50));
         }};
         outer = new MultiBlockOuter("multi-block-outer"){{
             size = 1;
-            health = 100;
-            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+            health = 15;
+            requirements(Category.crafting, ItemStack.with(Items.thorium, 50));
         }};
         liquidInner = new MultiBlockLiquidInner("multi-block-liquid-inner"){{
             size = 1;
-            health = 100;
-            requirements(Category.crafting, ItemStack.with(Items.titanium, 32));
+            health = 15;
+            requirements(Category.crafting, ItemStack.with(Items.plastanium, 24, Items.titatanium, 26));
         }};
         liquidOuter = new MultiBlockLiquidOuter("multi-block-liquid-outer"){{
             size = 1;
-            health = 100;
-            requirements(Category.crafting, ItemStack.with(Items.titanium, 32));
+            health = 15;
+            requirements(Category.crafting, ItemStack.with(Items.plastanium, 24, Items.titatanium, 26));
         }};
     }
 }

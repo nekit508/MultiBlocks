@@ -15,6 +15,7 @@ import static сontent.blocks.ModBlocks.*;
 public class ModCrafting implements ContentList {
     @Override
     public void load() {
+		// the shapes of these structures will still be changing, so I cannot balance.
         multiSilicon = new MultiBlockCenter("multi-block-silicon"){{
             construction = Constructions.siliconFactory;
             size = 1;
@@ -62,12 +63,12 @@ public class ModCrafting implements ContentList {
         multiReactor = new FusionReactor("multi-block-reactor"){{
             construction = Constructions.fusionReactor;
             size = 3;
-            health = 100;
-            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+            health = 360;
+            requirements(Category.crafting, ItemStack.with(Items.lead, 500, Items.thorium, 75, Items.silicon, 150, Items.surge, 50));
             consumes.power(20);
-            consumes.items(ItemStack.with(Items.coal, 2));
-            consItems = ItemStack.with(Items.coal, 2);
-            outputItem = new ItemStack(Items.graphite, 1);
+            consumes.items(ItemStack.with(Items.hydrogen, 5));
+            consItems = ItemStack.with(Items.hydrogen, 5);
+            outputItem = new ItemStack(Items.deuterium, 1);
             inPoint = new int[]{0,0};
         }};
         oilFactory = new MultiBlockCenter("multi-block-oil-factory"){{
