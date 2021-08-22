@@ -67,9 +67,9 @@ public class ModCrafting implements ContentList {
             health = 360;
             requirements(Category.crafting, ItemStack.with(Items.lead, 500, Items.thorium, 75, Items.silicon, 150, Items.surgeAlloy, 50));
             consumes.power(20);
-            consumes.items(ItemStack.with(Items.hydrogen, 5));
-            consItems = ItemStack.with(Items.hydrogen, 5);
-            outputItem = new ItemStack(Items.deuterium, 1);
+            consumes.items(ItemStack.with(Items.sand, 5));
+            consItems = ItemStack.with(Items.sand, 5);
+            outputItem = new ItemStack(Items.lead, 1);
             inPoint = new int[]{0,0};
         }};
         oilFactory = new MultiBlockCenter("multi-block-oil-factory"){{
