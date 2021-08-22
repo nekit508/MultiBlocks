@@ -9,6 +9,7 @@ import mindustry.type.LiquidStack;
 import mindustry.world.blocks.defense.Wall;
 import modClasses.*;
 import modVars.Constructions;
+import сontent.items.ModItems;
 
 import static сontent.blocks.ModBlocks.*;
 
@@ -64,7 +65,7 @@ public class ModCrafting implements ContentList {
             construction = Constructions.fusionReactor;
             size = 3;
             health = 360;
-            requirements(Category.crafting, ItemStack.with(Items.lead, 500, Items.thorium, 75, Items.silicon, 150, Items.surge, 50));
+            requirements(Category.crafting, ItemStack.with(Items.lead, 500, Items.thorium, 75, Items.silicon, 150, Items.surge-alloy, 50));
             consumes.power(20);
             consumes.items(ItemStack.with(Items.hydrogen, 5));
             consItems = ItemStack.with(Items.hydrogen, 5);
