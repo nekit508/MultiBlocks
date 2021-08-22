@@ -62,6 +62,7 @@ public class ModDefense implements ContentList {
             health = 500;
             size = 1;
             requirements(Category.defense, ItemStack.with(Items.copper, 32));
+	}};
 		/*
 		this is disbalance
 		i dont rnow how fix this disbalance
