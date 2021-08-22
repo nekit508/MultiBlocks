@@ -42,12 +42,12 @@ public class ModParts implements ContentList {
         liquidInner = new MultiBlockLiquidInner("multi-block-liquid-inner"){{
             size = 1;
             health = 15;
-            requirements(Category.crafting, ItemStack.with(Items.phaseFabric, 24, Items.titanium, 26));
+            requirements(Category.crafting, ItemStack.with(Items.plastanium, 20, Items.titanium, 30));
         }};
         liquidOuter = new MultiBlockLiquidOuter("multi-block-liquid-outer"){{
             size = 1;
             health = 15;
-            requirements(Category.crafting, ItemStack.with(Items.phaseFabric, 24, Items.titanium, 26));
+            requirements(Category.crafting, ItemStack.with(Items.phaseFabric, 20, Items.titanium, 30));
         }};
     }
 }
