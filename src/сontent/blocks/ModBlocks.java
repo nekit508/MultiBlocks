@@ -1,11 +1,18 @@
 package сontent.blocks;
 
 import arc.util.Log;
+import mindustry.content.Items;
 import mindustry.ctype.ContentList;
+import mindustry.type.Category;
+import mindustry.type.ItemStack;
 import mindustry.world.Block;
+import mindustry.world.meta.BuildVisibility;
+import modClasses.ShaderBlock;
 
 public class ModBlocks implements ContentList {
     public static Block
+            // test
+            shaderTest,
             // defense
             leadWall,largeLeadWall,metaglassWall,largeMetaglassWall,siliconWall,largeSiliconWall,copperCoil,
 			// forceWall,magneticShield,
@@ -22,6 +29,14 @@ public class ModBlocks implements ContentList {
         for (ContentList contentList : blocksContent) {
             contentList.load();
         }
+
+        Log.info("Loading shader block");
+        shaderTest = new ShaderBlock("shader-block"){{
+            solid = true;
+            health = 500;
+            size = 2;
+            requirements(Category.effect, BuildVisibility.sandboxOnly, ItemStack.with(Items.lead, 8));
+        }};
     }
 
     private ContentList[] blocksContent = {

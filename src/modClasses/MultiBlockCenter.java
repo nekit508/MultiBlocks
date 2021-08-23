@@ -36,7 +36,7 @@ public class MultiBlockCenter extends GenericCrafter {
         @Override
         public void draw() {
             super.draw();
-            Draw.alpha(0.3f);
+            Draw.alpha(0.8f);
             for(int i = 0; i < construction.data.size(); i++) {
                 for(int z = 0; z < construction.data.get(i).size(); z++) {
                     Block bl = content.block(construction.data.get(i).get(z));

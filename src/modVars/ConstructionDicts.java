@@ -39,7 +39,7 @@ public class ConstructionDicts {
             {"o", "mod-java-mod-multi-block-outer"},
             {"f", "off"},
             {"n", "mod-java-mod-electric-interface"},
-            {"p", "pulse-conduit-0"},
+            {"p", "pulse-conduit"},
             {"t", "titanium-wall"},
     };
     public static String[][] oilFactoryDict = new String[][]{
@@ -49,7 +49,7 @@ public class ConstructionDicts {
             {"q", "mod-java-mod-multi-block-liquid-outer"},
             {"f", "off"},
             {"n", "mod-java-mod-electric-interface"},
-            {"p", "pulse-conduit-0"},
+            {"p", "pulse-conduit"},
             {"t", "titanium-wall"},
             {"b", "mod-java-mod-battery"},
     };
@@ -59,7 +59,7 @@ public class ConstructionDicts {
             {"f", "off"},
             {"n", "mod-java-mod-electric-interface"},
             {"t", "titanium-wall"},
-            {"c", "mod-java-mod-copperCoil"},
+            {"c", "mod-java-mod-copper-сoil"},
             {"p", "plastanium-wall"},
             {"b", "mod-java-mod-battery"},
             {"m", "mod-java-mod-metaglass-wall"},

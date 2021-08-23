@@ -22,8 +22,7 @@ import mindustry.type.*;
 import mindustry.world.Block;
 import mindustry.world.ColorMapper;
 import сontent.blocks.ModBlocks;
-import сontent.bean.ModBlocks;
-import сontent.bean.ModItems;
+import сontent.items.ModItems;
 import сontent.planets.ModPlanets;
 import сontent.weathers.ModWeather;
 
