@@ -5,7 +5,7 @@ import mindustry.ctype.ContentList;
 import mindustry.type.Item;
 
 public class ModItems implements ContentList {
-    public static Item deuterium,tritium,oxygen,hydrogen;
+    public static Item deuterium,tritium,oxygen,hydrogen,FsSolka;
 
     @Override
     public void load() {
@@ -28,6 +28,11 @@ public class ModItems implements ContentList {
         oxygen = new Item("gas-oxygen"){{
             cost = 1f;
             hardness = 3;
+            alwaysUnlocked = false;
+        }};
+        FaSolka = new Item("FasolkaItIsBean"){{
+            cost = 1f;
+            hardness = 10;
             alwaysUnlocked = false;
         }};
     }
