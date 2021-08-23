@@ -30,10 +30,5 @@ public class ModItems implements ContentList {
             hardness = 3;
             alwaysUnlocked = false;
         }};
-        FaSolka = new Item("FasolkaItIsBean"){{
-            cost = 1f;
-            hardness = 10;
-            alwaysUnlocked = false;
-        }};
     }
 }
