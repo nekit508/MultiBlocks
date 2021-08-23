@@ -15,4 +15,5 @@ public class ModItems implements ContentList {
             hardness = 10;
             alwaysUnlocked = false;
         }};
+    }
 }
