@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Constructions {
     public static Construction siliconFactory,graphiteFactory,metaglassFactory,solidFuelGenerator,
-            liquidFactory,fusionReactor,oilFactory,electrolyzer;
+            liquidFactory,fusionReactor,oilFactory,electrolyzer,bigBean;
 
     public static void parse(String str,Construction cons,String[][] list){
         int z = 0;
@@ -151,6 +151,15 @@ public class Constructions {
                     "fffffmmommfffff\n";
             electrolyzer.offSet = -7;
             parse(el, electrolyzer, ConstructionDicts.electrolyzerDict);
+        }
+        {
+            bigBean = new Construction();
+            bigBean.points = new int[][]{{1,0},{2,1},{1,2}};
+            String bb = "fot\n" +
+                    "vfh\n" +
+                    "ise";
+            bigBean.offSet = -1;
+            parse(bb, bigBean, ConstructionDicts.bigBeanDict);
         }
     }
 }
