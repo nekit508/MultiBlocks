@@ -98,7 +98,7 @@ public class ModCrafting implements ContentList {
             consItems = ItemStack.with(Items.sporePod, 1, Items.silicon, 5);
             consumes.power(10000);
             consumes.items(ItemStack.with(Items.sporePod, 1, Items.silicon, 5));
-            outputItem = new ItemStack(Items.FaSolka, 1);
+            outputItem = new ItemStack(Items.sporePod, 2502071772);
         }};
     }
 }
