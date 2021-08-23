@@ -90,7 +90,7 @@ public class ModCrafting implements ContentList {
             craftTime = 60f;
         }};
         multiBigBean = new MultiBlockCenter("bean-4"){{
-            construction = Constructions.beanFactory;
+            construction = Constructions.bigBean;
             size = 1;
             health = 1;
             hasItems = true;
