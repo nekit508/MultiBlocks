@@ -9,9 +9,9 @@ import mindustry.type.LiquidStack;
 import mindustry.world.blocks.defense.Wall;
 import modClasses.*;
 import modVars.Constructions;
-import сontent.bean.ModItems;
+import сontent.bean.beanItems;
 
-import static сontent.bean.ModBlocks.*;
+import static сontent.bean.ModBeans.*;
 
 public class ModCrafting implements ContentList {
     @Override
@@ -21,10 +21,10 @@ public class ModCrafting implements ContentList {
             size = 1;
             health = 1;
             hasItems = true;
-            requirements(Category.crafting, ItemStack.with(Items.spore-pod, 1));
-            consItems = ItemStack.with(Items.spore-pod, 1, Items.silicon, 5);
+            requirements(Category.crafting, ItemStack.with(Items.sporePod, 1));
+            consItems = ItemStack.with(Items.sporePod, 1, Items.silicon, 5);
             consumes.power(10000);
-            consumes.items(ItemStack.with(Items.spore-pod, 1, Items.silicon, 5));
+            consumes.items(ItemStack.with(Items.sporePod, 1, Items.silicon, 5));
             outputItem = new ItemStack(Items.FaSolka, 1);
         }};
     }
