@@ -49,6 +49,7 @@ public class ModParts implements ContentList {
             health = 15;
             requirements(Category.crafting, ItemStack.with(Items.phaseFabric, 20, Items.titanium, 30));
         }};
+	/*
         beanInnerUp = new MultiBlockInner("bean-1"){{
             size = 1;
             health = 1;
@@ -64,5 +65,6 @@ public class ModParts implements ContentList {
             health = 1;
             requirements(Category.crafting, ItemStack.with(Items.sporePod, 1));
         }};
+	*/
     }
 }

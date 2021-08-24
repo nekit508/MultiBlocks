@@ -89,6 +89,7 @@ public class ModCrafting implements ContentList {
             outputItem = new ItemStack(Items.plastanium, 5);
             craftTime = 60f;
         }};
+	/*
         multiBigBean = new MultiBlockCenter("bean-4"){{
             construction = Constructions.bigBean;
             size = 1;
@@ -100,5 +101,6 @@ public class ModCrafting implements ContentList {
             consumes.items(ItemStack.with(Items.sporePod, 1, Items.silicon, 5));
             outputItem = new ItemStack(Items.sporePod, 100000);
         }};
+	*/
     }
 }

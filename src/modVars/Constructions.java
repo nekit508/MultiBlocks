@@ -152,6 +152,7 @@ public class Constructions {
             electrolyzer.offSet = -7;
             parse(el, electrolyzer, ConstructionDicts.electrolyzerDict);
         }
+        /*
         {
             bigBean = new Construction();
             bigBean.points = new int[][]{{1,0},{2,1},{1,2}};
@@ -161,5 +162,6 @@ public class Constructions {
             bigBean.offSet = -1;
             parse(bb, bigBean, ConstructionDicts.bigBeanDict);
         }
+        */
     }
 }

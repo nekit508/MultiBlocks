@@ -56,14 +56,15 @@ public class ModDefense implements ContentList {
             size = 2;
             requirements(Category.defense, ItemStack.with(Items.silicon, 32));
         }};
-	    copperCoil = new Wall("copper-coil"){{
+	copperCoil = new Wall("copper-coil"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 500;
             size = 1;
             requirements(Category.defense, ItemStack.with(Items.copper, 32));
 	    }};
-		beanPart1 = new Wall("bean-2"){{
+	/*
+	beanPart1 = new Wall("bean-2"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 1;
@@ -91,10 +92,11 @@ public class ModDefense implements ContentList {
             size = 1;
             requirements(Category.defense, ItemStack.with(Items.sporePod, 1));
         }};
-		/*
-		this is disbalance
-		i dont rnow how fix this disbalance
-		either will not be used, or will be like in "copper mod"
+	*/
+	/*
+	this is disbalance
+	i dont rnow how fix this disbalance
+	either will not be used, or will be like in "copper mod"
         forceWall = new ForceProjector("force-wall"){{
             health = 750;
             shieldHealth = 2500;
@@ -107,8 +109,8 @@ public class ModDefense implements ContentList {
             consumes.power(3);
             consumes.item(Items.phaseFabric).boost();
         }};
-		does not bring anything new to the gameplay and will be just rubbish.
-		Just in case, let it be
+	does not bring anything new to the gameplay and will be just rubbish.
+	Just in case, let it be
         magneticShield = new CircleForceProjector("magnetic-shield"){{
             health = 750;
             shieldHealth = 2500;
@@ -121,6 +123,6 @@ public class ModDefense implements ContentList {
             consumes.power(1);
             consumes.item(Items.phaseFabric).boost();
         }};
-		*/
+	*/
     }
 }
