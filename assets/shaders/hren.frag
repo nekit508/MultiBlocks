@@ -1,13 +1,13 @@
 #define HIGHP
 uniform float u_time;
+varying vec2 v_texCoords;
+uniform sampler2D r_texture;
 
 void main(){
-    float x = gl_FragCoord.x;
-    float y = gl_FragCoord.y;
-    float b = sin(x*u_time)*sin(y*u_time);
-    float g = cos(x*u_time)*cos(y*u_time);
-    float r = tan(x*u_time)*tan(y*u_time);;
-
-    float a = 1.0;
-    gl_FragColor = vec4(r,g,b,a);
+    float x = v_texCoords.x;
+    float y = v_texCoords.y;
+    vec2 coords = v_texCoords;
+    vec4 color = texture2D(r_texture, coords);
+    color[2] = sin(x+u_time*2.0);
+    gl_FragColor = color;
 }
