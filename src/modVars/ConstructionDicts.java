@@ -64,14 +64,16 @@ public class ConstructionDicts {
             {"b", "mod-java-mod-battery"},
             {"m", "mod-java-mod-metaglass-wall"},
     };
+    /*
     public static String[][] bigBeanDict = new String[][] {
             {"t", "mod-java-mod-bean-2"},
             {"s", "mod-java-mod-bean-7"},
             {"h", "mod-java-mod-bean-3"},
-			{"o", "mod-java-mod-bean-1"},
-			{"v", "mod-java-mod-bean-5"},
-			{"i", "mod-java-mod-bean-6"},
-			{"e", "mod-java-mod-bean-8"},
+	    {"o", "mod-java-mod-bean-1"},
+	    {"v", "mod-java-mod-bean-5"},
+	    {"i", "mod-java-mod-bean-6"},
+	    {"e", "mod-java-mod-bean-8"},
             {"f", "off"},
     };
+    */
 }
