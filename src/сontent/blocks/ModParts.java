@@ -32,15 +32,35 @@ public class ModParts implements ContentList {
         inner = new MultiBlockInner("multi-block-inner"){{
             size = 1;
             health = 15;
-            requirements(Category.crafting, ItemStack.with(Items.thorium, 50));
+            requirements(Category.crafting, ItemStack.with(Items.thorium, 30, Items.copper, 20));
         }};
         outer = new MultiBlockOuter("multi-block-outer"){{
             size = 1;
             health = 15;
-            requirements(Category.crafting, ItemStack.with(Items.thorium, 50));
+            requirements(Category.crafting, ItemStack.with(Items.thorium, 30, Items.titanium, 20));
         }};
+        mediumInner = new MultiBlockInner("multi-block-medium-inner"){{
+            size = 2;
+            health = 60;
+            requirements(Category.crafting, ItemStack.with(Items.thorium, 50, Items.phaseFabric, 20));
+        }};
+        mediumOuter = new MultiBlockOuter("multi-block-medium-outer"){{
+            size = 2;
+            health = 60;
+            requirements(Category.crafting, ItemStack.with(Items.thorium, 50, Items.titanium, 20));
+        }};
+        largeInner = new MultiBlockInner("multi-block-large-inner"){{
+            size = 2;
+            health = 100;
+            requirements(Category.crafting, ItemStack.with(Items.thorium, 70, Items.surgeAlloy, 30));
+        }};
+        largeOuter = new MultiBlockOuter("multi-block-large-outer"){{
+            size = 3;
+            health = 100;
+            requirements(Category.crafting, ItemStack.with(Items.thorium, 70, Items.titanium, 30));
+        }};		
         liquidInner = new MultiBlockLiquidInner("multi-block-liquid-inner"){{
-            size = 1;
+            size = 3;
             health = 15;
             requirements(Category.crafting, ItemStack.with(Items.plastanium, 20, Items.titanium, 30));
         }};

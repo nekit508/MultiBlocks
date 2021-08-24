@@ -18,12 +18,13 @@ public class ModBlocks implements ContentList {
 			// forceWall,magneticShield,
             // production
             // multi blocks
-            multiSilicon,multiGraphite,multiMetaglass,multiPowerGenerator,
-                    multiLiquid,multiReactor,oilFactory,
+            multiSilicon,multiGraphite,multiMetaglass,multiPowerGenerator,multiLiquid,multiReactor,oilFactory,
             // multi blocks's parts
-            inner,outer,liquidOuter,liquidInner,battery,electricInterface;
+            battery,electricInterface,
+			//inners and outers
+			liquidOuter,liquidInner,inner,outer,mediumInner,mediumOuter,largeInner,largeOuter;
             //bean
-	    //beanInnerUp,beanInnerDown,beanOuter,beanPart1,beanPart2,beanPart3,beanPart4,multiBigBean;
+	        //beanInnerUp,beanInnerDown,beanOuter,beanPart1,beanPart2,beanPart3,beanPart4,multiBigBean;
 			
     @Override
     public void load() {
