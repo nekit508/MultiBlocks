@@ -5,19 +5,11 @@ import arc.graphics.g2d.Draw;
 import arc.graphics.g2d.TextureRegion;
 import arc.util.Log;
 import modVars.Effects;
-//import mindustry.annotations.Annotations.*;
 
 public class FusionReactor extends MultiBlockCenter{
     public int[] inPoint;
-    private TextureRegion warmUpRegion;
     public FusionReactor(String name) {
         super(name);
-    }
-
-    @Override
-    public void load() {
-        super.load();
-        warmUpRegion = Core.atlas.find(name + "-warmupregion");
     }
 
     @Override
@@ -32,7 +24,7 @@ public class FusionReactor extends MultiBlockCenter{
         @Override
         public void onDestroyed() {
             super.onDestroyed();
-            if(warmUp > 0.8){
+            if(warmUp > 0.5){
                 Effects.FusionReactorExplode(x, y, this, tile);
             }
         }
@@ -40,8 +32,8 @@ public class FusionReactor extends MultiBlockCenter{
         @Override
         public void draw() {
             super.draw();
-            Draw.alpha(warmUp);
-            Draw.rect(warmUpRegion, x, y);
+            Effects.FusionEffect(x+(float)Math.cos(curAngle)*88,y+(float)Math.sin(curAngle)*88);
+            Effects.FusionEffect(x+(float)Math.cos(curAngle+3.14)*88,y+(float)Math.sin(curAngle+3.14)*88);
         }
 
         @Override
@@ -55,14 +47,18 @@ public class FusionReactor extends MultiBlockCenter{
                     lootItems();
                     craft();
                 }else{
-                    warmUp += 1f / 300f;
+                    warmUp += 1f / (10f * 60f);
                 }
             }else{
-                warmUp = 0f;
+                if(warmUp > 0f) {
+                    warmUp -= 1f / (2f * 60f);
+                }else{
+                    warmUp = 0f;
+                }
             }
             tickCounter ++;
-            curAngle += warmUp;
-            if(curAngle >= 360f) curAngle = 0f;
+            curAngle += warmUp/10;
+            if(curAngle >= 6.28) curAngle = 0f;
         }
     }
 }

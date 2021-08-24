@@ -41,7 +41,7 @@ public class ModBlocks implements ContentList {
         }};
     }
 
-    private ContentList[] blocksContent = {
+    private final ContentList[] blocksContent = {
             new ModDefense(),
             new ModCrafting(),
             new ModPower(),

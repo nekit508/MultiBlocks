@@ -1,5 +1,10 @@
 package modVars;
 
+import arc.graphics.Blending;
+import arc.graphics.Color;
+import arc.graphics.g2d.Draw;
+import arc.graphics.g2d.Fill;
+import arc.graphics.g2d.Lines;
 import mindustry.content.Liquids;
 import mindustry.entities.Damage;
 import mindustry.entities.Effect;
@@ -10,6 +15,8 @@ import mindustry.gen.Bullet;
 import mindustry.gen.Entityc;
 import mindustry.gen.Fire;
 import mindustry.gen.Sounds;
+import mindustry.graphics.Drawf;
+import mindustry.graphics.Layer;
 import mindustry.type.Liquid;
 import mindustry.world.Tile;
 import сontent.weathers.ModWeather;
@@ -61,5 +68,17 @@ public class Effects {
         Damage.damage(x, y, 15 * tilesize, 2000);
         Effect.shake(3f, 60f, x, y);
         ModWeather.slagRain.create(1f, 3600f);
+    }
+    public static void FusionEffect(float x, float y){
+        new Effect(10, (e)->{
+            Draw.z(Layer.blockBuilding+1f);
+            Draw.color(255, 255, 200);
+            Lines.stroke(0);
+            Draw.blend(Blending.additive);
+            Fill.circle(e.x, e.y, (e.lifetime - e.time) / 4);
+            Draw.blend();
+            Drawf.light(e.x, e.y, (e.lifetime - e.time), new Color(255,255,224), 0.8f);
+            Draw.reset();
+        }).at(x, y);
     }
 }

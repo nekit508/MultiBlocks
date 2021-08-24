@@ -1,8 +1,11 @@
 package modClasses;
 
+import arc.Core;
 import arc.graphics.g2d.Draw;
+import arc.graphics.g2d.TextureRegion;
 import arc.util.Log;
 import mindustry.gen.Building;
+import mindustry.graphics.Layer;
 import mindustry.type.ItemStack;
 import mindustry.type.LiquidStack;
 import mindustry.world.Block;
@@ -10,11 +13,10 @@ import mindustry.world.blocks.production.GenericCrafter;
 import static mindustry.Vars.*;
 
 public class MultiBlockCenter extends GenericCrafter {
-    public int tickCounter = 0;
-    public boolean structureEnded = false;
     public Construction construction;
     public ItemStack[] consItems;
     public LiquidStack[] consLiquids;
+    public TextureRegion constructionRegion;
     public MultiBlockCenter(String name) {
         super(name);
         solid = true;
@@ -24,19 +26,28 @@ public class MultiBlockCenter extends GenericCrafter {
     }
 
     @Override
+    public void load() {
+        super.load();
+        constructionRegion = Core.atlas.find(name + "-warmupregion");
+    }
+
+    @Override
     public void setStats() {
         super.setStats();
         //TODO add structure to description
     }
 
     public class MultiBuildingCenter extends GenericCrafterBuild {
+        public int tickCounter = 0;
+        public boolean structureEnded = false;
         Building build = null;
         float ending = 0;
 
         @Override
         public void draw() {
             super.draw();
-            Draw.alpha(0.8f);
+            Draw.alpha(0.6f);
+            Draw.z(Layer.blockBuilding+1f);
             for(int i = 0; i < construction.data.size(); i++) {
                 for(int z = 0; z < construction.data.get(i).size(); z++) {
                     Block bl = content.block(construction.data.get(i).get(z));
@@ -45,6 +56,9 @@ public class MultiBlockCenter extends GenericCrafter {
                     }
                 }
             }
+            Draw.alpha(1f);
+            Draw.rect(constructionRegion, x + construction.offSet, y + construction.offSet);
+            Draw.reset();
         }
 
         public void craft(){
