@@ -18,7 +18,7 @@ public class ModBlocks implements ContentList {
 			// forceWall,magneticShield,
             // production
             // multi blocks
-            multiSilicon,multiGraphite,multiMetaglass,multiPowerGenerator,multiLiquid,multiReactor,oilFactory,
+            multiSilicon,multiGraphite,multiMetaglass,multiPowerGenerator,multiLiquid,multiReactor,oilFactory,electrolyzerFctory,
             // multi blocks's parts
             battery,electricInterface,compressor,megaCompressor,
 	    //inners and outers
