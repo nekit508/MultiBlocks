@@ -89,7 +89,7 @@ public class ModCrafting implements ContentList {
             outputItem = new ItemStack(Items.plastanium, 5);
             craftTime = 60f;
         }};
-		electrolyzerFctory = new MultiBlockCenter("multi-block-oil-factory"){{
+		electrolyzerFctory = new MultiBlockCenter("multi-block-electrolyzer"){{
             construction = Constructions.electrolyzer;
             liquidCapacity = 500f;
             itemCapacity = 10;
