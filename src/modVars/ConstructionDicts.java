@@ -18,14 +18,7 @@ public class ConstructionDicts {
             {"b", "mod-java-mod-lead-wall"},
             {"o", "mod-java-mod-multi-block-outer"},
             {"f", "off"},
-            {"c", "copper-wall"},
-    };
-    public static String[][] solidFuelGeneratorDict = new String[][]{
-            {"i", "mod-java-mod-multi-block-liquid-inner"},
-            {"b", "mod-java-mod-lead-wall"},
-            {"o", "mod-java-mod-multi-block-liquid-outer"},
-            {"f", "off"},
-            {"c", "copper-wall"},
+            {"c", "mod-java-mod-copper-coil"},
     };
     public static String[][] liquidFactoryDict = new String[][]{
             {"i", "mod-java-mod-multi-block-liquid-inner"},

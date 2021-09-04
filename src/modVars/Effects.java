@@ -11,14 +11,12 @@ import mindustry.entities.Effect;
 import mindustry.entities.Puddles;
 import mindustry.entities.bullet.LiquidBulletType;
 import mindustry.game.Team;
-import mindustry.gen.Bullet;
-import mindustry.gen.Entityc;
-import mindustry.gen.Fire;
-import mindustry.gen.Sounds;
+import mindustry.gen.*;
 import mindustry.graphics.Drawf;
 import mindustry.graphics.Layer;
 import mindustry.type.Liquid;
 import mindustry.world.Tile;
+import сontent.shaders.ModShaders;
 import сontent.weathers.ModWeather;
 
 import java.util.Random;
@@ -28,6 +26,14 @@ import static mindustry.Vars.world;
 
 public class Effects {
     static Random rand = new Random();
+
+    public static void hotEffect(Building b){
+        Draw.draw(Layer.blockOver + 1f, ()->{
+            Draw.shader(ModShaders.hot);
+            Draw.rect(b.block.region, b.x, b.y);
+            Draw.shader();
+        });
+    }
 
     public static LiquidBulletType FusionReactorExplode = new LiquidBulletType(Liquids.slag){
         {

@@ -5,8 +5,8 @@ import modClasses.Construction;
 import java.util.ArrayList;
 
 public class Constructions {
-    public static Construction siliconFactory,graphiteFactory,metaglassFactory,solidFuelGenerator,
-            liquidFactory,fusionReactor,oilFactory,electrolyzer,bigBean;
+    public static Construction siliconFactory,graphiteFactory,metaglassFactory,
+            liquidFactory,fusionReactor,oilFactory,electrolyzer;
 
     public static void parse(String str,Construction cons,String[][] list){
         int z = 0;
@@ -50,29 +50,14 @@ public class Constructions {
         }
         {
             metaglassFactory = new Construction();
-            metaglassFactory.points = new int[][]{{2,0},{4,0},{6,3}};
-            String mgf = "fffcfff\n" +
-                    "ffbbbff\n" +
-                    "ibfffbf\n" +
-                    "cbfffbo\n" +
-                    "ibfffbf\n" +
-                    "ffbbbff\n" +
-                    "fffсfff";
+            metaglassFactory.points = new int[][]{{0,1},{0,3},{4,2}};
+            String mgf = "fibif\n" +
+                    "bcccb\n" +
+                    "bcfcb\n" +
+                    "bcccb\n" +
+                    "fbobf\n";
             metaglassFactory.offSet = -3;
             parse(mgf,metaglassFactory, ConstructionDicts.metaglassFactoryDict);
-        }
-        {
-            solidFuelGenerator = new Construction();
-            solidFuelGenerator.points = new int[][]{{2,0},{0,2},{5,2},{2,5}};
-            String sfg = "ccciccc\n" +
-                    "cbbbbbc\n" +
-                    "cbbbbbc\n" +
-                    "ibbfbbi\n" +
-                    "cbbbbbc\n" +
-                    "cbbbbbc\n" +
-                    "ccciccc";
-            solidFuelGenerator.offSet = -3;
-            parse(sfg,solidFuelGenerator, ConstructionDicts.solidFuelGeneratorDict);
         }
         {
             liquidFactory = new Construction();
@@ -112,9 +97,9 @@ public class Constructions {
                     "fftpttfffffffwfffffffttptff\n" +
                     "fttptffffffffwfffffffftpttf\n" +
                     "ftpptfffffffwwwffffffftpptf\n" +
-                    "ffpttwfffffwfffwfffffwttptf\n" +
+                    "ffpttwfffffwfffwfffffwttpff\n" +
                     "ofptwwwwwwwwfffwwwwwwwwtpnf\n" +
-                    "ffpttwfffffwfffwfffffwttptf\n" +
+                    "ffpttwfffffwfffwfffffwttpff\n" +
                     "ftpptfffffffwwwffffffftpptf\n" +
                     "fttptffffffffwfffffffftpttf\n" +
                     "fftpttfffffffwfffffffttptff\n" +

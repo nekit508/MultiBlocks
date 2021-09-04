@@ -56,13 +56,6 @@ public class ModDefense implements ContentList {
             size = 2;
             requirements(Category.defense, ItemStack.with(Items.silicon, 32));
         }};
-	copperCoil = new Wall("copper-coil"){{
-            lightningChance = -1f;
-            chanceDeflect = -1f;
-            health = 500;
-            size = 1;
-            requirements(Category.defense, ItemStack.with(Items.copper, 32));
-	    }};
 	/*
 	beanPart1 = new Wall("bean-2"){{
             lightningChance = -1f;

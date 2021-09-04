@@ -8,6 +8,5 @@ public class Construction {
     public int[][] points;
 
     public Construction(){
-
     }
 }

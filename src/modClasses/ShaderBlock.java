@@ -5,6 +5,8 @@ import mindustry.graphics.Layer;
 import mindustry.world.blocks.defense.Wall;
 import сontent.shaders.ModShaders;
 
+import static mindustry.Vars.renderer;
+
 public class ShaderBlock extends Wall {
     public ShaderBlock(String name) {
         super(name);

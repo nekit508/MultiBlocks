@@ -10,25 +10,21 @@ import mindustry.type.ItemStack;
 import mindustry.type.LiquidStack;
 import mindustry.world.Block;
 import mindustry.world.blocks.production.GenericCrafter;
+import modFuncs.Funcs;
+
 import static mindustry.Vars.*;
 
 public class MultiBlockCenter extends GenericCrafter {
     public Construction construction;
     public ItemStack[] consItems;
     public LiquidStack[] consLiquids;
-    public TextureRegion constructionRegion;
+
     public MultiBlockCenter(String name) {
         super(name);
         solid = true;
         update = true;
         itemCapacity = 10;
         hasItems = true;
-    }
-
-    @Override
-    public void load() {
-        super.load();
-        constructionRegion = Core.atlas.find(name + "-warmupregion");
     }
 
     @Override
@@ -41,23 +37,25 @@ public class MultiBlockCenter extends GenericCrafter {
         public int tickCounter = 0;
         public boolean structureEnded = false;
         Building build = null;
-        float ending = 0;
 
         @Override
         public void draw() {
             super.draw();
-            Draw.alpha(0.6f);
-            Draw.z(Layer.blockBuilding+1f);
-            for(int i = 0; i < construction.data.size(); i++) {
-                for(int z = 0; z < construction.data.get(i).size(); z++) {
-                    Block bl = content.block(construction.data.get(i).get(z));
-                    if(bl != null) {
-                        Draw.rect(content.block(construction.data.get(i).get(z)).region, i * tilesize + construction.offSet * tilesize + x, z * tilesize + construction.offSet * tilesize + y);
+            if(!structureEnded){
+                Draw.alpha(0.6f);
+                Draw.z(Layer.blockBuilding + 1f);
+                for (int i = 0; i < construction.data.size(); i++) {
+                    for (int z = 0; z < construction.data.get(i).size(); z++) {
+                        Block bl = content.block(construction.data.get(i).get(z));
+                        if (bl != null) {
+                            Draw.rect(content.block(construction.data.get(i).get(z)).region, i * tilesize + construction.offSet * tilesize + x, z * tilesize + construction.offSet * tilesize + y);
+                        }
                     }
                 }
             }
-            Draw.alpha(1f);
-            Draw.rect(constructionRegion, x + construction.offSet, y + construction.offSet);
+            else {
+                Draw.alpha(1f);
+            }
             Draw.reset();
         }
 
@@ -79,7 +77,6 @@ public class MultiBlockCenter extends GenericCrafter {
         }
 
         public boolean checkTiles(){
-            ending = 0;
             for(int i = 0; i < construction.data.size(); i++){
                 for(int z = 0; z < construction.data.get(i).size(); z++){
                     if(world.tileWorld(x + i*tilesize + construction.offSet*tilesize, y + z*tilesize + construction.offSet*tilesize) != null){

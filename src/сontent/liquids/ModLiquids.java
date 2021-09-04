@@ -4,7 +4,7 @@ import arc.graphics.Color;
 import mindustry.ctype.ContentList;
 import mindustry.type.Liquid;
 
-public class Liquids implements ContentList {
+public class ModLiquids implements ContentList {
     public static Liquid deuterium, tritium, hydrogen, oxygen;
 
     @Override

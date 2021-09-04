@@ -8,6 +8,10 @@ import modVars.Effects;
 
 public class FusionReactor extends MultiBlockCenter{
     public int[] inPoint;
+    TextureRegion topR;
+    TextureRegion botR;
+    TextureRegion liqR;
+
     public FusionReactor(String name) {
         super(name);
     }
@@ -16,6 +20,13 @@ public class FusionReactor extends MultiBlockCenter{
     public void setBars() {
         super.setBars();
         // TODO warmup bar
+    }
+
+    @Override
+    public void load() {
+        super.load();
+        topR = Core.atlas.find(name + "-cons");
+        topR = Core.atlas.find(name + "-top");
     }
 
     public class FusionReactorBuild extends MultiBuildingCenter{
@@ -32,8 +43,10 @@ public class FusionReactor extends MultiBlockCenter{
         @Override
         public void draw() {
             super.draw();
-            Effects.FusionEffect(x+(float)Math.cos(curAngle)*88,y+(float)Math.sin(curAngle)*88);
-            Effects.FusionEffect(x+(float)Math.cos(curAngle+3.14)*88,y+(float)Math.sin(curAngle+3.14)*88);
+            if(structureEnded) {
+                Effects.FusionEffect(x + (float) Math.cos(curAngle) * 88, y + (float) Math.sin(curAngle) * 88);
+                Effects.FusionEffect(x + (float) Math.cos(curAngle + 3.14) * 88, y + (float) Math.sin(curAngle + 3.14) * 88);
+            }
         }
 
         @Override
@@ -44,6 +57,7 @@ public class FusionReactor extends MultiBlockCenter{
             }
             if(structureEnded){
                 if(warmUp >= 1f) {
+                    Effects.hotEffect(this);
                     lootItems();
                     craft();
                 }else{

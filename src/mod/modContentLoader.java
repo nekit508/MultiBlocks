@@ -22,7 +22,9 @@ import mindustry.type.*;
 import mindustry.world.Block;
 import mindustry.world.ColorMapper;
 import сontent.blocks.ModBlocks;
+import сontent.floors.ModFloors;
 import сontent.items.ModItems;
+import сontent.liquids.ModLiquids;
 import сontent.planets.ModPlanets;
 import сontent.weathers.ModWeather;
 
@@ -56,6 +58,8 @@ public class modContentLoader extends ContentLoader {
             new ModWeather(),
             new ModPlanets(),
             new ModItems(),
+            new ModLiquids(),
+            new ModFloors(),
     };
 
     public modContentLoader(){
