@@ -34,9 +34,9 @@ public class ConstructionDicts {
             {"f", "off"},
     };
     public static String[][] fusionReactorDict = new String[][]{
-            {"i", "mod-java-mod-multi-block-inner"},
+            {"i", "mod-java-mod-multi-block-large-inner"},
             {"w", "thorium-wall"},
-            {"o", "mod-java-mod-multi-block-outer"},
+            {"o", "mod-java-mod-multi-block-large-outer"},
             {"f", "off"},
             {"n", "mod-java-mod-electric-interface"},
             {"p", "pulse-conduit"},
