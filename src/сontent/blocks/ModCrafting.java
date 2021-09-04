@@ -89,6 +89,23 @@ public class ModCrafting implements ContentList {
             outputItem = new ItemStack(Items.plastanium, 5);
             craftTime = 60f;
         }};
+		electrolyzerFctory = new MultiBlockCenter("multi-block-oil-factory"){{
+            construction = Constructions.electrolyzer;
+            liquidCapacity = 500f;
+            itemCapacity = 10;
+            size = 1;
+            health = 100;
+            hasLiquids = true;
+            hasItems = true;
+            requirements(Category.crafting, ItemStack.with(Items.lead, 32));
+            consLiquids = new LiquidStack[]{new LiquidStack(Liquids.oil, 1)};
+            consItems = new ItemStack[]{new ItemStack(Items.titanium, 1)};
+            consumes.power(8);
+            consumes.liquid(Liquids.oil, 1f);
+            consumes.items(ItemStack.with(Items.titanium, 8));
+            outputItem = new ItemStack(Items.plastanium, 5);
+            craftTime = 60f;
+        }};
 	/*
         multiBigBean = new MultiBlockCenter("bean-4"){{
             construction = Constructions.bigBean;

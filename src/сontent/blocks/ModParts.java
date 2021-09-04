@@ -50,7 +50,7 @@ public class ModParts implements ContentList {
             requirements(Category.crafting, ItemStack.with(Items.thorium, 50, Items.titanium, 20));
         }};
         largeInner = new MultiBlockInner("multi-block-large-inner"){{
-            size = 2;
+            size = 3;
             health = 100;
             requirements(Category.crafting, ItemStack.with(Items.thorium, 70, Items.surgeAlloy, 30));
         }};
@@ -68,6 +68,20 @@ public class ModParts implements ContentList {
             size = 1;
             health = 15;
             requirements(Category.crafting, ItemStack.with(Items.phaseFabric, 20, Items.titanium, 30));
+        }};
+        compressor = new Wall("compressor"){{
+            lightningChance = -1f;
+            chanceDeflect = -1f;
+            health = 80;
+            size = 1;
+            requirements(Category.defense, ItemStack.with(Items.plastanium, 50, Items.titanium, 80, Items.lead, 80));
+        }};
+        mega-compressor = new Wall("mega-compressor"){{
+            lightningChance = -1f;
+            chanceDeflect = -1f;
+            health = 320;
+            size = 2;
+            requirements(Category.defense, ItemStack.with(Items.plastanium, 50, Items.titanium, 80, Items.lead, 80));
         }};
 	/*
         beanInnerUp = new MultiBlockInner("bean-1"){{
