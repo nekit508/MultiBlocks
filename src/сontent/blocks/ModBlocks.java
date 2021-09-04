@@ -20,11 +20,11 @@ public class ModBlocks implements ContentList {
             // multi blocks
             multiSilicon,multiGraphite,multiMetaglass,multiPowerGenerator,multiLiquid,multiReactor,oilFactory,
             // multi blocks's parts
-            battery,electricInterface,compressor,mega-compressor,
-			//inners and outers
-			liquidOuter,liquidInner,inner,outer,mediumInner,mediumOuter,largeInner,largeOuter;
+            battery,electricInterface,compressor,megaCompressor,
+	    //inners and outers
+            liquidOuter,liquidInner,inner,outer,mediumInner,mediumOuter,largeInner,largeOuter;
             //bean
-	        //beanInnerUp,beanInnerDown,beanOuter,beanPart1,beanPart2,beanPart3,beanPart4,multiBigBean;
+	    //beanInnerUp,beanInnerDown,beanOuter,beanPart1,beanPart2,beanPart3,beanPart4,multiBigBean;
 			
     @Override
     public void load() {
