@@ -77,14 +77,12 @@ public class Effects {
     }
     public static void FusionEffect(float x, float y){
         new Effect(10, (e)->{
-            Draw.z(Layer.blockBuilding+1f);
             Draw.color(255, 255, 200);
             Lines.stroke(0);
             Draw.blend(Blending.additive);
             Fill.circle(e.x, e.y, (e.lifetime - e.time) / 4);
             Draw.blend();
-            Drawf.light(e.x, e.y, (e.lifetime - e.time), new Color(255,255,224), 0.8f);
-            Draw.reset();
+            Drawf.light(e.x, e.y, (e.lifetime - e.time)*4, new Color(255,255,224), 0.8f);
         }).at(x, y);
     }
 }

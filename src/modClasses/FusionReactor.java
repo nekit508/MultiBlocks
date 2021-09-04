@@ -4,6 +4,8 @@ import arc.Core;
 import arc.graphics.g2d.Draw;
 import arc.graphics.g2d.TextureRegion;
 import arc.util.Log;
+import mindustry.Vars;
+import mindustry.graphics.Layer;
 import modVars.Effects;
 
 public class FusionReactor extends MultiBlockCenter{
@@ -25,8 +27,9 @@ public class FusionReactor extends MultiBlockCenter{
     @Override
     public void load() {
         super.load();
-        topR = Core.atlas.find(name + "-cons");
+        botR = Core.atlas.find(name + "-bot");
         topR = Core.atlas.find(name + "-top");
+        liqR = Core.atlas.find(name + "-liq");
     }
 
     public class FusionReactorBuild extends MultiBuildingCenter{
@@ -44,8 +47,14 @@ public class FusionReactor extends MultiBlockCenter{
         public void draw() {
             super.draw();
             if(structureEnded) {
+                Draw.z(Layer.blockBuilding+5f);
+                Draw.rect(botR, x, y - Vars.tilesize);
+                Draw.z(Layer.blockBuilding+6f);
                 Effects.FusionEffect(x + (float) Math.cos(curAngle) * 88, y + (float) Math.sin(curAngle) * 88);
                 Effects.FusionEffect(x + (float) Math.cos(curAngle + 3.14) * 88, y + (float) Math.sin(curAngle + 3.14) * 88);
+                Draw.z(Layer.blockBuilding+7f);
+                Draw.rect(topR, x, y - Vars.tilesize);
+                Draw.reset();
             }
         }
 
