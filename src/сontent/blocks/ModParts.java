@@ -76,7 +76,7 @@ public class ModParts implements ContentList {
             size = 1;
             requirements(Category.defense, ItemStack.with(Items.plastanium, 50, Items.titanium, 80, Items.lead, 80));
         }};
-        mega-compressor = new Wall("mega-compressor"){{
+        megaCompressor = new Wall("mega-compressor"){{
             lightningChance = -1f;
             chanceDeflect = -1f;
             health = 320;
