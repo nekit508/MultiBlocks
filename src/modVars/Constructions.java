@@ -112,9 +112,9 @@ public class Constructions {
                     "fftpttfffffffwfffffffttptff\n" +
                     "fttptffffffffwfffffffftpttf\n" +
                     "ftpptfffffffwwwffffffftpptf\n" +
-                    "ftpttwfffffwfffwfffffwttpff\n" +
-                    "ftntwwwwwwwwfffwwwwwwwwtpfo\n" +
-                    "ftpttwfffffwfffwfffffwttpff\n" +
+                    "ffpttwfffffwfffwfffffwttptf\n" +
+                    "ofptwwwwwwwwfffwwwwwwwwtpnf\n" +
+                    "ffpttwfffffwfffwfffffwttptf\n" +
                     "ftpptfffffffwwwffffffftpptf\n" +
                     "fttptffffffffwfffffffftpttf\n" +
                     "fftpttfffffffwfffffffttptff\n" +
