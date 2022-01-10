@@ -9,7 +9,7 @@ public class MultiConsume extends BaseConsume{
     public boolean canConsume(Building build) {
         for(ItemStack stack: items){
             for(ItemStack stackOut: itemsOut) {
-                if (stack.amount > build.items.get(stack.item) || stackOut.amount > build.block().itemCapacity - build.items.get(stack.item)) {
+                if (stack.amount > build.items.get(stack.item) || stackOut.amount > build.block().itemCapacity - build.items.get(stackOut.item)) {
                     return false;
                 }
             }

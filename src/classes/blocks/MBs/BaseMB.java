@@ -2,6 +2,7 @@ package classes.blocks.MBs;
 
 import arc.math.Mathf;
 import arc.util.Log;
+import classes.blocks.MBParts.BaseMBPart;
 import classes.blocks.MBsTools.MBItemPort;
 import classes.blocks.MBsTools.MBLiquidPort;
 import classes.consumers.BaseConsume;
@@ -20,6 +21,7 @@ public class BaseMB extends Block {
     public BaseConsume consume;
     float craftTime = 80;
     float warmupSpeed = 0.019f;
+    float speedUp = 0f, warmupUp = 0f, energyInIncrease = 0f, energyOutIncrease = 0f;
 
     public BaseMB(String name) {
         super(name);
@@ -29,6 +31,7 @@ public class BaseMB extends Block {
         itemCapacity = 30;
         liquidCapacity = 30f;
         noUpdateDisabled = true;
+        size = 1;
     }
 
     public class BaseMBBuilding extends Building{
@@ -36,15 +39,18 @@ public class BaseMB extends Block {
         float progress = 0f;
         float totalProgress = 0f;
         float warmup = 0f;
+        // for memory economizing
+        Block block;
+        Building building;
+        BaseMBPart blockPart;
 
         @Override
         public void updateTile() {
             super.updateTile();
             isEnded = construction.check(this);
-            Log.info(isEnded);
             if(isEnded){
                 checkConsumes();
-                Log.info(1);
+                checkBlocksInScheme();
             }
         }
 
@@ -78,56 +84,64 @@ public class BaseMB extends Block {
 
         void checkConsumes(){
             if(consume.canConsume(this)){
-                progress += getProgressIncrease(craftTime);
+                progress += getProgressIncrease(craftTime / speedUp);
                 totalProgress += delta();
-                warmup = Mathf.approachDelta(warmup, 1f, warmupSpeed);
+                warmup = Mathf.approachDelta(warmup, 1f, warmupSpeed * warmupUp);
                 if(progress >= 1f){
                     consume.consume(this);
                     progress %= 1f;
                 }
             }else{
-                warmup = Mathf.approachDelta(warmup, 0f, warmupSpeed);
+                warmup = Mathf.approachDelta(warmup, 0f, warmupSpeed * warmupUp);
             }
         }
 
-        void dumpL(Building building, Liquid liquid, float amount){
-            building.liquids.add(liquid, amount);
-        }
-
         void checkBlocksInScheme(){
-            Block block;
             for(int x = 0;x < construction.bluePrint.length;x++){
                 for(int y = 0;y < construction.bluePrint[x].length;y++){
-                    Building building = Vars.world.build(x - construction.offset + tileX(), y - construction.offset + tileY());
+                    building = Vars.world.build(x - construction.offset + tileX(), y - construction.offset + tileY());
                     if(building != null){
                         block = building.block();
                         if(block instanceof MBItemPort){
-                            //noinspection StatementWithEmptyBody
-                            if(((MBItemPort) block).mode);
-                            if(!((MBItemPort) block).mode){
-                                if(timer(timerDump, dumpTime / timeScale)){
-                                    for(ItemStack stack: consume.itemsOut){
-                                        int remaining = block.itemCapacity - building.items.get(stack.item);
-                                        if(remaining >= 1 && items.get(stack.item) >= 1){
-                                            building.items.add(stack.item, 1);
-                                            items.remove(stack.item, 1);
-                                        }
+                            if(((MBItemPort) block).mode) {
+                                for (ItemStack stack : consume.items) {
+                                    int remaining = itemCapacity - items.get(stack.item);
+                                    if (remaining >= 1 && building.items.get(stack.item) >= 1) {
+                                        items.add(stack.item, 1);
+                                        building.items.remove(stack.item, 1);
+                                    }
+                                }
+                            }else{
+                                for (ItemStack stack : consume.itemsOut) {
+                                    int remaining = block.itemCapacity - building.items.get(stack.item);
+                                    if (remaining >= 1 && items.get(stack.item) >= 1) {
+                                        building.items.add(stack.item, 1);
+                                        items.remove(stack.item, 1);
                                     }
                                 }
                             }
-                        }
-                        block = building.block();
-                        if(block instanceof MBLiquidPort){
-                            //noinspection StatementWithEmptyBody
-                            if(((MBLiquidPort) block).mode) ;
-                            if(!((MBLiquidPort) block).mode) {
+                        }else if(block instanceof MBLiquidPort){
+                            if(((MBLiquidPort) block).mode) {
                                 for(LiquidStack stack: consume.liquidsOut){
-                                    float remaining = block.liquidCapacity - liquids.get(stack.liquid);
+                                    float remaining = liquidCapacity - liquids.get(stack.liquid);
+                                    float canOut = Math.min(building.liquids.get(stack.liquid), remaining);
+                                    liquids.add(stack.liquid, canOut);
+                                    building.liquids.remove(stack.liquid, canOut);
+                                }
+                            }else{
+                                for(LiquidStack stack: consume.liquidsOut){
+                                    float remaining = block.liquidCapacity - building.liquids.get(stack.liquid);
                                     float canOut = Math.min(liquids.get(stack.liquid), remaining);
                                     building.liquids.add(stack.liquid, canOut);
                                     liquids.remove(stack.liquid, canOut);
                                 }
                             }
+                        }else if(block instanceof BaseMBPart){
+                            blockPart = (BaseMBPart) block;
+                            speedUp += blockPart.speedUp;
+                            warmupUp += blockPart.warmupUp;
+                            energyInIncrease += blockPart.energyInIncrease;
+                            energyOutIncrease += blockPart.energyOutIncrease;
                         }
                     }
                 }

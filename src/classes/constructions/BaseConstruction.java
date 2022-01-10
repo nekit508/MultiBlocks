@@ -7,33 +7,33 @@ import mindustry.gen.Building;
 import mindustry.graphics.Layer;
 import mindustry.world.Block;
 import mod.Tools;
+import сontent.blocks.ModBlocks;
 
 public class BaseConstruction {
     public Block[][] bluePrint;
     public int offset;
+    Block block = null, bluePrintBlock = null;
+    int xPos, yPos;
+    Building building;
 
     public BaseConstruction(){}
 
     public boolean check(Building center){
-        Block block;
-        Block bluePrintBlock;
         for(int x = 0;x < bluePrint.length;x++){
             for(int y = 0;y < bluePrint[x].length;y++){
                 block = null;
                 bluePrintBlock = bluePrint[x][y];
-                Building building = Vars.world.build(x - offset + center.tileX(), y - offset + center.tileY());
+                building = Vars.world.build(x - offset + center.tileX(), y - offset + center.tileY());
                 if(building != null) {
                     block = building.block;
                 }
-                if(bluePrintBlock != block && bluePrintBlock != null) return false;
+                if(block != ModBlocks.upper) if(bluePrintBlock != block && bluePrintBlock != null) return false;
             }
         }
         return true;
     }
 
     public void drawBluePrint(Building center){
-        Block bluePrintBlock;
-        int xPos, yPos;
         Draw.alpha(0.6f);
         Draw.z(Layer.block);
         for(int x = 0;x < bluePrint.length;x++){
