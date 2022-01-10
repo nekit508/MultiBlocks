@@ -27,7 +27,7 @@ import static arc.Core.files;
 import static mindustry.Vars.constants;
 import static mindustry.Vars.mods;
 
-public class modContentLoader extends ContentLoader {
+public class ModContentLoader extends ContentLoader {
     private ObjectMap<String, MappableContent>[] contentNameMap = new ObjectMap[ContentType.all.length];
     private Seq<Content>[] contentMap = new Seq[ContentType.all.length];
     private MappableContent[][] temporaryMapper;
@@ -49,13 +49,13 @@ public class modContentLoader extends ContentLoader {
             new TechTree(),
     };
     private final ContentList[] modContent = {
-            new ModBlocks(),
+            new ModBlocks()
     };
 
-    public modContentLoader(){
+    public ModContentLoader(){
         clear();
     }
-    public modContentLoader(Cons<ContentList> cons){
+    public ModContentLoader(Cons<ContentList> cons){
         createModContent(cons);
     }
 
