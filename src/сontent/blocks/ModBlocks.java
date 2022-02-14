@@ -7,7 +7,7 @@ import mindustry.world.Block;
 public class ModBlocks implements ContentList {
     public static Block
             // multi-blocks
-            MBT1Graphite,
+            MBT1Steel,
             // multi-blocks tools
             itemIn, itemOut, liquidIn, liquidOut,
             // multi-block parts

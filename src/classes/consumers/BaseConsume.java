@@ -7,6 +7,7 @@ import mindustry.type.LiquidStack;
 public class BaseConsume {
     public ItemStack[] items = new ItemStack[]{}, itemsOut = new ItemStack[]{};
     public LiquidStack[] liquids = new LiquidStack[]{}, liquidsOut = new LiquidStack[]{};
+    public float power = 0f, powerOut = 0f;
     public boolean canConsume(Building build){return false;}
     public void consume(Building build){}
 }

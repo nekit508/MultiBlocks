@@ -1,18 +1,19 @@
 package classes.constructions;
 
 import arc.graphics.g2d.Draw;
-import arc.util.Log;
 import mindustry.Vars;
 import mindustry.gen.Building;
 import mindustry.graphics.Layer;
 import mindustry.world.Block;
+import mod.Reference;
 import mod.Tools;
 import сontent.blocks.ModBlocks;
 
 public class BaseConstruction {
     public Block[][] bluePrint;
     public int offset;
-    Block block = null, bluePrintBlock = null;
+    Block block = null;
+    Block bluePrintBlock = null;
     int xPos, yPos;
     Building building;
 

@@ -8,11 +8,10 @@ import сontent.consumes.Consumes;
 
 public class MBT1s{
     public MBT1s(){
-        ModBlocks.MBT1Graphite = new BaseMB("MBT1Graphite"){{
-            consume = Consumes.CoalToGraphite;
-            construction = Constructions.MBT1Graphite;
-            requirements(Category.crafting, new ItemStack[]{new ItemStack(Items.copper, 99999)});
-            size = 1;
+        ModBlocks.MBT1Steel = new BaseMB("MBT1Steel"){{
+            consume = Consumes.Steel;
+            construction = () -> Constructions.MBT1Steel;
+            requirements(Category.crafting, ItemStack.with(Items.graphite, 20, Items.copper, 25, Items.lead, 20));
         }};
     }
 }

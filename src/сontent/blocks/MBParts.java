@@ -12,12 +12,14 @@ public class MBParts {
         }};
         ModBlocks.steelPanel = new BaseMBPart("steel-panel"){{
             requirements(Category.effect, ItemStack.with(Items.lead, 10));
-        }};
-        ModBlocks.copperPanel = new BaseMBPart("copper-panel"){{
-            requirements(Category.effect, ItemStack.with(Items.copper, 10));
+            hasShadow = false;
         }};
         ModBlocks.copperCoil = new BaseMBPart("copper-coil"){{
             requirements(Category.effect, ItemStack.with(Items.copper, 10));
+        }};
+        ModBlocks.copperPanel = new BaseMBPart("copper-panel"){{
+            requirements(Category.effect, ItemStack.with(Items.copper, 10));
+            hasShadow = false;
         }};
     }
 }

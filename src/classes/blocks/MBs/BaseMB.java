@@ -1,7 +1,7 @@
 package classes.blocks.MBs;
 
+import arc.func.Prov;
 import arc.math.Mathf;
-import arc.util.Log;
 import classes.blocks.MBParts.BaseMBPart;
 import classes.blocks.MBsTools.MBItemPort;
 import classes.blocks.MBsTools.MBLiquidPort;
@@ -9,7 +9,6 @@ import classes.consumers.BaseConsume;
 import classes.constructions.BaseConstruction;
 import mindustry.Vars;
 import mindustry.gen.Building;
-import mindustry.gen.Teamc;
 import mindustry.type.Item;
 import mindustry.type.ItemStack;
 import mindustry.type.Liquid;
@@ -17,11 +16,10 @@ import mindustry.type.LiquidStack;
 import mindustry.world.Block;
 
 public class BaseMB extends Block {
-    public BaseConstruction construction;
+    public Prov<BaseConstruction> construction;
     public BaseConsume consume;
-    float craftTime = 80;
-    float warmupSpeed = 0.019f;
-    float speedUp = 0f, warmupUp = 0f, energyInIncrease = 0f, energyOutIncrease = 0f;
+    public float craftTime = 80, warmupSpeed = 0.019f;
+    float speedUp = 1f, warmupUp = 1f, energyInIncrease = 1f, energyOutIncrease = 1f;
 
     public BaseMB(String name) {
         super(name);
@@ -47,7 +45,7 @@ public class BaseMB extends Block {
         @Override
         public void updateTile() {
             super.updateTile();
-            isEnded = construction.check(this);
+            isEnded = construction.get().check(this);
             if(isEnded){
                 checkConsumes();
                 checkBlocksInScheme();
@@ -78,7 +76,7 @@ public class BaseMB extends Block {
         public void draw() {
             super.draw();
             if(!isEnded){
-                construction.drawBluePrint(this);
+                construction.get().drawBluePrint(this);
             }
         }
 
@@ -97,9 +95,9 @@ public class BaseMB extends Block {
         }
 
         void checkBlocksInScheme(){
-            for(int x = 0;x < construction.bluePrint.length;x++){
-                for(int y = 0;y < construction.bluePrint[x].length;y++){
-                    building = Vars.world.build(x - construction.offset + tileX(), y - construction.offset + tileY());
+            for(int x = 0;x < construction.get().bluePrint.length;x++){
+                for(int y = 0;y < construction.get().bluePrint[x].length;y++){
+                    building = Vars.world.build(x - construction.get().offset + tileX(), y - construction.get().offset + tileY());
                     if(building != null){
                         block = building.block();
                         if(block instanceof MBItemPort){
